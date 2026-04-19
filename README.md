@@ -110,6 +110,9 @@ See mystery-method/skills/ for dating methodology skills extracted from books.
 | 情绪流方法论 | 损友 | — | 12 | ✅ 完成 |
 | 诱惑的艺术 (The Art of Seduction) | 罗伯特·格林 | — | 8 | ✅ 完成 |
 
+| 把妹达人圣经 (Rules of the Game) | 尼尔·斯特劳斯 | — | 11 | ✅ 完成 |
+| 把妹达人 (The Game) | 尼尔·斯特劳斯 | — | 12 | ✅ 完成 |
+
 ## License
 
 MIT — 技能内容提取自原书，版权归原作者所有。
