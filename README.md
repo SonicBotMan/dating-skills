@@ -19,19 +19,35 @@ dating-skills/
 │       ├── dhv-display.md             #   DHV展示高价值
 │       ├── ioi-iod-signals.md         #   IOI/IOD信号系统
 │       ├── frame-control.md           #   框架控制
-│       ├── compliance-testing.md      #   服从性测试
-│       ├── intermittent-reward.md     #   间歇性奖赏
+│       ├── compliance-testing.md       #   服从性测试
+│       ├── intermittent-reward.md      #   间歇性奖赏
 │       ├── calibration.md             #   社交标准化
 │       ├── kino-escalation.md         #   进挪升高
 │       ├── isolation-bounce.md        #   孤立+护送
-│       ├── grounding-identity.md      #   背景植入
+│       ├── grounding-identity.md       #   背景植入
 │       ├── conspiracy-rapport.md      #   同谋意识
-│       ├── multi-threading.md         #   多重对话脉络
+│       ├── multi-threading.md          #   多重对话脉络
 │       ├── lmr-destroy.md             #   LMR摧毁
 │       ├── asd-handling.md            #   ASD反荡妇防卫
 │       ├── jealousy-plotline.md       #   嫉妒情节
 │       ├── freeze-out.md              #   冷冻机制
 │       └── pawn-pivot.md              #   抵押/枢纽策略
+├── beast-gentleman/                   ← 《野兽绅士》蒸馏包
+│   ├── BOOK_OVERVIEW.md
+│   ├── INDEX.md
+│   └── skills/                        # 18个原子化技能
+├── juggler-method/                    ← 《杂耍人方法》蒸馏包
+│   ├── BOOK_OVERVIEW.md
+│   ├── INDEX.md
+│   └── skills/                        # 12个原子化技能
+├── emotional-flow/                    ← 《情绪流方法论》蒸馏包
+│   ├── BOOK_OVERVIEW.md
+│   ├── INDEX.md
+│   └── skills/                        # 12个原子化技能
+└── art-of-seduction/                  ← 《诱惑的艺术》蒸馏包
+    ├── BOOK_OVERVIEW.md
+    ├── INDEX.md
+    └── skills/                        # 8个原子化技能
 ```
 
 ## 如何使用这些 Skills
@@ -43,6 +59,10 @@ dating-skills/
 ```bash
 # 复制到 Hermes skills 目录
 cp -r mystery-method/skills/ ~/.hermes/skills/dating/mystery-method/
+cp -r beast-gentleman/skills/ ~/.hermes/skills/dating/beast-gentleman/
+cp -r juggler-method/skills/ ~/.hermes/skills/dating/juggler-method/
+cp -r emotional-flow/skills/ ~/.hermes/skills/dating/emotional-flow/
+cp -r art-of-seduction/skills/ ~/.hermes/skills/dating/art-of-seduction/
 ```
 
 Agent 会在对话中根据 `description` 字段自动判断是否激活对应 skill。
@@ -65,21 +85,9 @@ See mystery-method/skills/ for dating methodology skills extracted from books.
 | **R** Reading | 原文引用（≤150字） | 可追溯性 |
 | **I** Interpretation | 方法论骨架（用自己的话） | 快速理解 |
 | **A1** Past Application | 书中作者用过的案例 | 类比素材 |
-| **A2** Future Trigger ★ | 触发场景 + 语言信号 | 何时使用 |
+| **A2** Future Trigger ★ | 触发场景 + 语言信号 | 何式使用 |
 | **E** Execution | 1-2-3 可执行步骤 | 怎么用 |
 | **B** Boundary ★ | 不适用场景 + 失败模式 | 防止乱用 |
-
-### 推荐学习路径
-
-按 INDEX.md 中的 **M3阶段递进路径** 学习：
-
-```
-基础层 → approach-anxiety, calibration, m3-model
-吸引层 → group-approach → neg-tactics → dhv-display → ioi-iod-signals
-操控层 → frame-control, compliance-testing, intermittent-reward
-推进层 → kino-escalation → isolation-bounce → grounding-identity → conspiracy-rapport
-收网层 → freeze-out → jealousy-plotline → asd-handling → lmr-destroy
-```
 
 ## 蒸馏方法论：RIA-TV++
 
@@ -97,7 +105,10 @@ See mystery-method/skills/ for dating methodology skills extracted from books.
 | 书名 | 作者 | 产出skill数 | 状态 |
 |------|------|-------------|------|
 | 谜男方法 (The Mystery Method) | Mystery | 20 | ✅ 完成 |
-| 野兽绅士 (Beast Gentleman) | 巫家民（Tango） | 2017 | 18 | ✅ 完成 |
+| 野兽绅士 (Beast Gentleman) | 巫家民（Tango） | 18 | ✅ 完成 |
+| 杂耍人方法 (Juggler Method) | 杂耍人 (Wayne Elise) | — | 12 | ✅ 完成 |
+| 情绪流方法论 | 损友 | — | 12 | ✅ 完成 |
+| 诱惑的艺术 (The Art of Seduction) | 罗伯特·格林 | — | 8 | ✅ 完成 |
 
 ## License
 
