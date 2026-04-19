@@ -98,6 +98,8 @@ See mystery-method/skills/ for dating methodology skills extracted from books.
 |------|------|-------------|------|
 | 谜男方法 (The Mystery Method) | Mystery | 20 | ✅ 完成 |
 
+| 野兽绅士 (Beast Gentleman) | 巫家民（Tango） | 2017 | 18 | ✅ 完成 |
+
 ## License
 
 MIT — 技能内容提取自原书，版权归原作者所有。
