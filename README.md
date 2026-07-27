@@ -1,127 +1,84 @@
-# 📚 Dating Skills — 恋爱方法论蒸馏技能包
+# 她发来一条消息。你的 AI 告诉你怎么回。
 
-> 由 [book2skill](https://github.com/nicobailey/book2skill) 流水线（RIA-TV++方法论）自动蒸馏产出。
-> 忠实于原文，不做道德审查，不做改造净化。
+> 161 个恋爱技能装进你的 AI 助手。不需要背话术，不需要读完 18 本书。
 
-## 仓库结构
+**[在线体验 →](https://sonicbotman.github.io/dating-skills/)**
 
-```
-dating-skills/
-├── README.md                          ← 你正在看
-├── mystery-method/                    ← 《谜男方法》蒸馏包
-│   ├── BOOK_OVERVIEW.md               # 阶段0：整书理解（Adler四步分析）
-│   ├── INDEX.md                       # 阶段3：技能索引 + 学习路径 + 关系图
-│   └── skills/                        # 20个原子化技能
-│       ├── m3-model.md                #   M3模型（吸引→舒适感→诱惑）
-│       ├── approach-anxiety.md        #   接近焦虑管理
-│       ├── group-approach.md          #   群组打开
-│       ├── neg-tactics.md             #   否定话术
-│       ├── dhv-display.md             #   DHV展示高价值
-│       ├── ioi-iod-signals.md         #   IOI/IOD信号系统
-│       ├── frame-control.md           #   框架控制
-│       ├── compliance-testing.md       #   服从性测试
-│       ├── intermittent-reward.md      #   间歇性奖赏
-│       ├── calibration.md             #   社交标准化
-│       ├── kino-escalation.md         #   进挪升高
-│       ├── isolation-bounce.md        #   孤立+护送
-│       ├── grounding-identity.md       #   背景植入
-│       ├── conspiracy-rapport.md      #   同谋意识
-│       ├── multi-threading.md          #   多重对话脉络
-│       ├── lmr-destroy.md             #   LMR摧毁
-│       ├── asd-handling.md            #   ASD反荡妇防卫
-│       ├── jealousy-plotline.md       #   嫉妒情节
-│       ├── freeze-out.md              #   冷冻机制
-│       └── pawn-pivot.md              #   抵押/枢纽策略
-├── beast-gentleman/                   ← 《野兽绅士》蒸馏包
-│   ├── BOOK_OVERVIEW.md
-│   ├── INDEX.md
-│   └── skills/                        # 18个原子化技能
-├── juggler-method/                    ← 《杂耍人方法》蒸馏包
-│   ├── BOOK_OVERVIEW.md
-│   ├── INDEX.md
-│   └── skills/                        # 12个原子化技能
-├── emotional-flow/                    ← 《情绪流方法论》蒸馏包
-│   ├── BOOK_OVERVIEW.md
-│   ├── INDEX.md
-│   └── skills/                        # 12个原子化技能
-└── art-of-seduction/                  ← 《诱惑的艺术》蒸馏包
-    ├── BOOK_OVERVIEW.md
-    ├── INDEX.md
-    └── skills/                        # 8个原子化技能
-```
+---
 
-## 如何使用这些 Skills
+## 你能变成什么
 
-### 在 Hermes Agent 中使用（推荐）
+| 你遇到的 | 没有 AI | AI 给你的方案 |
+|---------|--------|------------|
+| 她发来"嗯" | 想了 10 分钟不知道怎么接 | 情绪推拉 + 具体回复模板 |
+| 第一次约会 | 不知道聊什么、手放哪 | Kino 升高 3 步 + IOI 信号判断 |
+| 突然冷场 | 紧张想逃跑 | 多重对话脉络 + 情绪过山车 |
+| 她问"你是不是渣男" | 慌了、乱解释 | 框架控制 + 调情反转 |
+| 想牵手 / 接吻 | 怕被拒绝、什么都没做 | IOI 确认 + 进挪升高窗口 |
+| 被已读不回 | 连发 3 条追问、彻底消失 | 间歇性奖赏 + 冷冻 3 天 |
 
-将 `skills/` 目录下的 `.md` 文件放入 `~/.hermes/skills/` 即可被 agent 自动识别和调用。
+---
+
+## 一条命令安装
 
 ```bash
-# 复制到 Hermes skills 目录
-cp -r mystery-method/skills/ ~/.hermes/skills/dating/mystery-method/
-cp -r beast-gentleman/skills/ ~/.hermes/skills/dating/beast-gentleman/
-cp -r juggler-method/skills/ ~/.hermes/skills/dating/juggler-method/
-cp -r emotional-flow/skills/ ~/.hermes/skills/dating/emotional-flow/
-cp -r art-of-seduction/skills/ ~/.hermes/skills/dating/art-of-seduction/
+git clone https://github.com/SonicBotMan/dating-skills.git
+cp -r dating-skills/*/skills/ ~/.hermes/skills/dating/
 ```
 
-Agent 会在对话中根据 `description` 字段自动判断是否激活对应 skill。
+装完后对 AI 说：「她发来一条消息说嗯，怎么回？」或「约会冷场了怎么办」
 
-### 在 Claude Code / Cursor 中使用
+> 不用 Hermes？[Claude Code 用法](https://github.com/SonicBotMan/dating-skills#在-claude-code--cursor-中使用) · [直接在 GitHub 看](https://github.com/SonicBotMan/dating-skills/tree/main/mystery-method/skills)
 
-将 skill 文件放入你的 CLAUDE.md 或 .cursor/rules 引用路径中：
+---
 
-```bash
-# 在项目根目录的 CLAUDE.md 中添加
-See mystery-method/skills/ for dating methodology skills extracted from books.
-```
-
-### 作为独立知识库阅读
-
-每个 skill 文件包含完整的 **RIA++ 六段结构**：
-
-| 段落 | 内容 | 作用 |
-|------|------|------|
-| **R** Reading | 原文引用（≤150字） | 可追溯性 |
-| **I** Interpretation | 方法论骨架（用自己的话） | 快速理解 |
-| **A1** Past Application | 书中作者用过的案例 | 类比素材 |
-| **A2** Future Trigger ★ | 触发场景 + 语言信号 | 何式使用 |
-| **E** Execution | 1-2-3 可执行步骤 | 怎么用 |
-| **B** Boundary ★ | 不适用场景 + 失败模式 | 防止乱用 |
-
-## 蒸馏方法论：RIA-TV++
+## AI 对话示例
 
 ```
-阶段 0: Adler 整书理解     → BOOK_OVERVIEW.md
-阶段 1: 5个 agent 并行提取 → candidates/ (框架/原则/案例/反例/术语)
-阶段 1.5: 三重验证筛选     → V1跨域 + V2预测力 + V3独特性
-阶段 2: RIA++ 构造 skill   → 每个skill的 SKILL.md
-阶段 3: Zettelkasten 链接  → INDEX.md (引用图 + 学习路径)
-阶段 4: 压力测试           → test-prompts.json (darwin兼容)
+你：她突然问我"你觉得我们是什么关系"，怎么回？
+
+AI：这是关系定义测试。她想知道你的态度，但直接回答会丧失主动权。
+
+    策略：框架控制 + 情绪推拉
+
+    → 调皮型："现在啊？还在考察期。你表现不错，继续努力。"
+    → 暧昧型："别人问我会说朋友。但你不是别人对吧？"
+    → 霸气型："你希望是什么关系？先说说你能提供什么。"
+
+    ⚠️ 边界：如果她语气严肃而非调情，认真回答。
 ```
 
-## 贡献的书目
+这不是给你一本书——是给你一个**实时教练**。
 
-| 书名 | 作者 | 产出skill数 | 状态 |
-|------|------|-------------|------|
-| 谜男方法 (The Mystery Method) | Mystery | 20 | ✅ 完成 |
-| 野兽绅士 (Beast Gentleman) | 巫家民（Tango） | 18 | ✅ 完成 |
-| 杂耍人方法 (Juggler Method) | 杂耍人 (Wayne Elise) | 12 | ✅ 完成 |
-| 情绪流方法论 | 损友 | 12 | ✅ 完成 |
-| 诱惑的艺术 (The Art of Seduction) | 罗伯特·格林 | 8 | ✅ 完成 |
-| 把妹达人圣经 (Rules of the Game) | 尼尔·斯特劳斯 | 11 | ✅ 完成 |
-| 把妹达人 (The Game) | 尼尔·斯特劳斯 | 12 | ✅ 完成 |
-| 沟通的艺术 | 罗纳德·阿德勒 |  5 | ✅ 完成 |
-| 调情的艺术 | — | 7 | ✅ 完成 |
-| 身体语言密码 | — | 6 | ✅ 完成 |
-| 蔡康永的说话之道 | 蔡康永 | 6 | ✅ 完成 |
-| 冷读术 | —| 6 | ✅ 完成 |
-| 魔鬼聊天术 | 阮琦 | 8 | ✅ 完成 |
-| 极限话术 | 死囚漫步 |  6 | ✅ 完成 |
-| 梵尘话术 | 梵尘 | 6 | ✅ 完成 |
-| 爱的五种能力 | — | 5 | ✅ 完成 |
-| 影响力 | 罗伯特·西奥迪尼 | 6 | ✅ 完成 |
-| 进化心理学 | 戴维·巴斯 |  6 | ✅ 完成 |
+---
+
+## 18 本书 · 161 个技能
+
+| 书名 | 作者 | 技能数 |
+|------|------|-------|
+| 谜男方法 | Mystery | 20 |
+| 野兽绅士 | 巫家民（Tango）| 18 |
+| 把妹达人 The Game | 尼尔·施特劳斯 | 12 |
+| 把妹达人圣经 | 尼尔·施特劳斯 | 11 |
+| 杂耍人方法 | Wayne Elise | 12 |
+| 情绪流方法论 | 损友 | 12 |
+| 诱惑的艺术 | 罗伯特·格林 | 8 |
+| 魔鬼聊天术 | 阮琦 | 8 |
+| 调情的艺术 | — | 7 |
+| 影响力 | 罗伯特·西奥迪尼 | 6 |
+| 蔡康永的说话之道 | 蔡康永 | 6 |
+| 冷读术 | — | 6 |
+| 身体语言密码 | — | 6 |
+| 进化心理学 | 戴维·巴斯 | 6 |
+| 极限话术 | 死囚漫步 | 6 |
+| 梵尘话术 | 梵尘 | 6 |
+| 爱的五种能力 | — | 5 |
+| 沟通的艺术 | 罗纳德·阿德勒 | 5 |
+
+每个技能包含 RIA++ 六段结构（原文引用 / 方法论骨架 / 案例 / 触发场景 / 执行步骤 / 边界警示）。
+
+---
+
 ## License
 
-MIT — 技能内容提取自原书，版权归原作者所有。
+MIT — 技能内容提取自原书，版权归原作者所有。由 book2skill 流水线自动蒸馏产出。忠实于原文，不做道德审查，不做改造净化。
