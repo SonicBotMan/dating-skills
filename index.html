@@ -3,112 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>恋爱方法论蒸馏技能包 — 18 本书 → 161 个 AI 技能</title>
-<meta name="description" content="把 18 本恋爱经典蒸馏成 161 个原子化 AI 技能。RIA++ 六段结构。不做道德审查，不做改造净化。">
-<meta property="og:title" content="恋爱方法论蒸馏技能包">
-<meta property="og:description" content="18 本书 → 161 个 AI 技能。你也可以是恋爱专家。">
+<title>她发来一条消息。你的 AI 告诉你怎么回。— dating-skills</title>
+<meta name="description" content="161 个恋爱技能装进你的 AI 助手。不会聊天？不知道她怎么想？不敢升级关系？让 AI 帮你搞定。">
+<meta property="og:title" content="你也可以是恋爱专家">
+<meta property="og:description" content="161 个恋爱技能。她发来一条消息，你的 AI 告诉你怎么回。">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://github.com/SonicBotMan/dating-skills">
+<meta property="og:url" content="https://sonicbotman.github.io/dating-skills/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="恋爱方法论蒸馏技能包">
-<meta name="twitter:description" content="18 本书 → 161 个 AI 技能。">
 
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg: #0a0a0f;
-  --bg-elev: #12121f;
-  --surface: #1a1a2e;
-  --border: #2a2a4a;
-  --border-lt: #3a3a5a;
-  --text: #f8fafc;
-  --text-2: #94a3b8;
-  --text-3: #64748b;
-  --rose: #f43f5e;
-  --rose-glow: rgba(244,63,94,0.25);
-  --gold: #f59e0b;
-  --purple: #8b5cf6;
-  --pink: #ec4899;
+  --bg: #0a0a0f; --bg-elev: #12121f; --surface: #1a1a2e;
+  --border: #2a2a4a; --border-lt: #3a3a5a;
+  --text: #f8fafc; --text-2: #94a3b8; --text-3: #64748b;
+  --rose: #f43f5e; --rose-glow: rgba(244,63,94,0.25);
+  --gold: #f59e0b; --purple: #8b5cf6; --pink: #ec4899; --green: #10b981;
 }
-
 * { -webkit-font-smoothing: antialiased; }
 html { scroll-behavior: smooth; }
-body {
-  font-family: 'Noto Sans SC', system-ui, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  overflow-x: hidden;
-}
+body { font-family: 'Noto Sans SC', system-ui, sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
 
 .bg-glow {
   background:
     radial-gradient(ellipse 60% 40% at 50% 0%, var(--rose-glow), transparent 70%),
-    radial-gradient(ellipse 50% 30% at 80% 10%, rgba(139,92,246,0.1), transparent 70%),
-    radial-gradient(ellipse 40% 20% at 20% 30%, rgba(245,158,11,0.06), transparent 70%);
+    radial-gradient(ellipse 50% 30% at 80% 10%, rgba(139,92,246,0.1), transparent 70%);
 }
-
 .grid-bg {
-  background-image:
-    linear-gradient(rgba(42,42,74,0.15) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(42,42,74,0.15) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(42,42,74,0.15) 1px,transparent 1px),linear-gradient(90deg,rgba(42,42,74,0.15) 1px,transparent 1px);
   background-size: 50px 50px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black, transparent 70%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black, transparent 70%);
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 30%,black,transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%,black,transparent 70%);
 }
-
-.grad-rose {
-  background: linear-gradient(135deg, #f43f5e 0%, #f59e0b 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.grad-purple {
-  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.card-h {
-  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), border-color 0.3s, box-shadow 0.3s;
-}
-.card-h:hover {
-  transform: translateY(-4px);
-  border-color: var(--border-lt);
-  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5), 0 0 30px -8px var(--rose-glow);
-}
+.grad-rose { background: linear-gradient(135deg,#f43f5e 0%,#f59e0b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.grad-purple { background: linear-gradient(135deg,#8b5cf6 0%,#ec4899 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-@keyframes pulse-rose {
-  0%,100% { box-shadow: 0 0 30px -5px var(--rose-glow); }
-  50% { box-shadow: 0 0 50px 0 var(--rose-glow); }
-}
+@keyframes pulse-rose { 0%,100% { box-shadow: 0 0 30px -5px var(--rose-glow); } 50% { box-shadow: 0 0 50px 0 var(--rose-glow); } }
 .pulse { animation: pulse-rose 3s ease-in-out infinite; }
 
-.nav-blur {
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  background: rgba(10,10,15,0.8);
-  border-bottom: 1px solid var(--border);
-}
+.nav-blur { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(10,10,15,0.8); border-bottom: 1px solid var(--border); }
+.code-block { background: var(--bg-elev); border: 1px solid var(--border); font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.7; }
 
-.code-block {
-  background: var(--bg-elev);
-  border: 1px solid var(--border);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
-  line-height: 1.7;
-}
-
-@media (max-width: 768px) {
-  .hero-t { font-size: 2.5rem !important; }
-}
+@media (max-width: 768px) { .hero-t { font-size: 2rem !important; } }
 </style>
 </head>
 <body>
@@ -121,8 +63,7 @@ body {
       <span class="font-bold text-sm">dating-skills</span>
     </a>
     <div class="flex items-center gap-5 text-sm">
-      <a href="#distill" class="text-gray-400 hover:text-white transition hidden sm:inline">蒸馏</a>
-      <a href="#books" class="text-gray-400 hover:text-white transition hidden sm:inline">书目</a>
+      <a href="#compare" class="text-gray-400 hover:text-white transition hidden sm:inline">你能变成什么</a>
       <a href="#install" class="text-gray-400 hover:text-white transition hidden sm:inline">安装</a>
       <a href="https://github.com/SonicBotMan/dating-skills" class="text-gray-400 hover:text-white transition" aria-label="GitHub">
         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -136,368 +77,302 @@ body {
   <div class="absolute inset-0 grid-bg"></div>
   <div class="relative max-w-5xl mx-auto px-6 text-center w-full">
 
-    <div class="inline-flex items-center gap-2 px-3 py-1 mb-8 rounded-full border border-rose-500/30 bg-rose-500/10">
-      <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span>
-      <span class="text-xs text-rose-300 font-medium">你也可以是恋爱专家</span>
-    </div>
-
-    <h1 class="hero-t text-5xl md:text-7xl font-black leading-tight mb-6">
-      <span class="grad-rose">18 本</span>恋爱圣经<br>
-      → <span class="grad-purple">161 个</span> AI 技能
+    <h1 class="hero-t text-4xl md:text-6xl font-black leading-tight mb-8">
+      她发来一条消息。<br>
+      <span class="grad-rose">你的 AI</span> 告诉你怎么回。
     </h1>
 
-    <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12">
-      把经典恋爱方法论<strong class="text-white">蒸馏</strong>成原子化技能，装进你的 AI 助手。<br>
-      <span class="text-gray-500">忠实于原文。不做道德审查。不做改造净化。</span>
+    <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-4">
+      161 个恋爱技能装进你的 AI 助手。
+    </p>
+    <p class="text-base text-gray-500 max-w-2xl mx-auto mb-12">
+      不会聊天？不知道她怎么想？不敢升级关系？<br>
+      ——<strong class="text-gray-300">让 AI 帮你搞定。</strong>
     </p>
 
     <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-      <a href="https://github.com/SonicBotMan/dating-skills" class="px-8 py-3.5 bg-rose-500 hover:bg-rose-600 text-white font-semibold rounded-xl transition pulse">
-        View on GitHub
+      <a href="#compare" class="px-8 py-3.5 bg-rose-500 hover:bg-rose-600 text-white font-semibold rounded-xl transition pulse">
+        看看你能变成什么
       </a>
-      <a href="#distill" class="px-8 py-3.5 border border-gray-700 hover:border-gray-500 text-white font-semibold rounded-xl transition">
-        什么是蒸馏？
+      <a href="https://github.com/SonicBotMan/dating-skills" class="px-8 py-3.5 border border-gray-700 hover:border-gray-500 text-white font-semibold rounded-xl transition">
+        GitHub
       </a>
     </div>
 
-    <!-- 数据 -->
-    <div class="grid grid-cols-4 gap-4 max-w-2xl mx-auto reveal">
+    <div class="grid grid-cols-3 gap-4 max-w-md mx-auto reveal">
       <div>
-        <div class="text-3xl md:text-4xl font-black grad-rose" data-target="18">0</div>
-        <div class="text-xs text-gray-500 mt-1">经典书目</div>
+        <div class="text-3xl md:text-4xl font-black grad-rose" data-target="161">0</div>
+        <div class="text-xs text-gray-500 mt-1">恋爱技能</div>
       </div>
       <div>
-        <div class="text-3xl md:text-4xl font-black grad-purple" data-target="161">0</div>
-        <div class="text-xs text-gray-500 mt-1">原子化技能</div>
-      </div>
-      <div>
-        <div class="text-3xl md:text-4xl font-black text-gold-400" style="color:#f59e0b" data-target="6">0</div>
-        <div class="text-xs text-gray-500 mt-1">RIA++ 段落</div>
+        <div class="text-3xl md:text-4xl font-black grad-purple" data-target="18">0</div>
+        <div class="text-xs text-gray-500 mt-1">本经典书</div>
       </div>
       <div>
         <div class="text-3xl md:text-4xl font-black" style="color:#10b981" data-target="0">0</div>
-        <div class="text-xs text-gray-500 mt-1">道德审查</div>
+        <div class="text-xs text-gray-500 mt-1">页你需要读</div>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- 什么是蒸馏 -->
-<section id="distill" class="py-24 bg-[var(--bg-elev)] border-y border-[var(--border)]">
+<!-- 核心对比：你能变成什么 -->
+<section id="compare" class="py-24">
   <div class="max-w-5xl mx-auto px-6">
 
     <div class="text-center mb-16">
-      <p class="text-sm text-rose-400 font-mono mb-3 tracking-widest uppercase">Distillation</p>
-      <h2 class="text-3xl md:text-4xl font-black mb-4">什么是"蒸馏"？</h2>
-      <p class="text-gray-400 max-w-2xl mx-auto">
-        每本书 300+ 页，读完记住的不到 10%。蒸馏 = 把可执行的部分提取出来，变成<strong class="text-white">即用型技能</strong>。
-      </p>
+      <p class="text-sm text-rose-400 font-mono mb-3 tracking-widest uppercase">Before & After</p>
+      <h2 class="text-3xl md:text-4xl font-black mb-4">你能变成什么</h2>
+      <p class="text-gray-400">6 个真实场景——没有 AI vs 有了 AI</p>
     </div>
 
-    <!-- 蒸馏流程 -->
-    <div class="flex items-center justify-center gap-2 md:gap-4 mb-16 flex-wrap reveal">
-      <div class="bg-[var(--surface)] border border-[var(--border)] rounded-xl px-5 py-3 text-center">
-        <div class="text-2xl font-black text-gray-500">📖</div>
-        <div class="text-xs text-gray-400 mt-1">300 页厚书</div>
+    <div class="space-y-4">
+
+      <!-- 场景 1：聊天 -->
+      <div class="reveal grid md:grid-cols-2 gap-3">
+        <div class="bg-red-500/5 border border-red-500/20 rounded-xl p-5 flex items-center gap-4">
+          <div class="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/30 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          </div>
+          <div>
+            <div class="text-xs text-red-400 font-mono uppercase mb-1">她发来"嗯"</div>
+            <p class="text-sm text-gray-400">你想了 10 分钟不知道怎么接。聊了 3 天，变成朋友了。</p>
+          </div>
+        </div>
+        <div class="bg-green-500/5 border border-green-500/20 rounded-xl p-5 flex items-center gap-4">
+          <div class="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <div class="text-xs text-green-400 font-mono uppercase mb-1">AI 说</div>
+            <p class="text-sm text-gray-300">"用<strong class="text-white">情绪推拉</strong>：先推开（'你这嗯字打得真敷衍'），再拉近（'但我知道你在想我'）。给她一个追你的理由。"</p>
+          </div>
+        </div>
       </div>
-      <svg class="w-5 h-5 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-      <div class="bg-[var(--surface)] border border-rose-500/30 rounded-xl px-5 py-3 text-center">
-        <div class="text-2xl font-black grad-rose">RIA-TV++</div>
-        <div class="text-xs text-gray-400 mt-1">蒸馏流水线</div>
+
+      <!-- 场景 2：约会 -->
+      <div class="reveal grid md:grid-cols-2 gap-3">
+        <div class="bg-red-500/5 border border-red-500/20 rounded-xl p-5 flex items-center gap-4">
+          <div class="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/30 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          </div>
+          <div>
+            <div class="text-xs text-red-400 font-mono uppercase mb-1">第一次约会</div>
+            <p class="text-sm text-gray-400">不知道聊什么，手不知道放哪。约会后她再也没回过消息。</p>
+          </div>
+        </div>
+        <div class="bg-green-500/5 border border-green-500/20 rounded-xl p-5 flex items-center gap-4">
+          <div class="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <div class="text-xs text-green-400 font-mono uppercase mb-1">AI 说</div>
+            <p class="text-sm text-gray-300">"进入 <strong class="text-white">Kino 升高</strong>阶段。第 1 步：过马路轻触手肘。第 2 步：并排走时肩膀接触。第 3 步：看她反应——如果没躲开，<strong class="text-white">IOI 信号确认</strong>，可以握手。"</p>
+          </div>
+        </div>
       </div>
-      <svg class="w-5 h-5 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-      <div class="bg-[var(--surface)] border border-purple-500/30 rounded-xl px-5 py-3 text-center">
-        <div class="text-2xl font-black grad-purple">8-20</div>
-        <div class="text-xs text-gray-400 mt-1">个原子技能</div>
+
+      <!-- 场景 3：冷场 -->
+      <div class="reveal grid md:grid-cols-2 gap-3">
+        <div class="bg-red-500/5 border border-red-500/20 rounded-xl p-5 flex items-center gap-4">
+          <div class="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/30 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          </div>
+          <div>
+            <div class="text-xs text-red-400 font-mono uppercase mb-1">空气突然安静</div>
+            <p class="text-sm text-gray-400">你紧张得想逃跑。越想找话题越找不到。她开始看手机了。</p>
+          </div>
+        </div>
+        <div class="bg-green-500/5 border border-green-500/20 rounded-xl p-5 flex items-center gap-4">
+          <div class="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <div class="text-xs text-green-400 font-mono uppercase mb-1">AI 说</div>
+            <p class="text-sm text-gray-300">"别慌。启动 <strong class="text-white">多重对话脉络</strong>：'对了，你有没有过那种特别丢人的经历？' 冷场不是结束——是升级的<strong class="text-white">情绪过山车</strong>。"</p>
+          </div>
+        </div>
       </div>
+
+      <!-- 场景 4：测试 -->
+      <div class="reveal grid md:grid-cols-2 gap-3">
+        <div class="bg-red-500/5 border border-red-500/20 rounded-xl p-5 flex items-center gap-4">
+          <div class="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/30 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          </div>
+          <div>
+            <div class="text-xs text-red-400 font-mono uppercase mb-1">她问"你是不是渣男"</div>
+            <p class="text-sm text-gray-400">你慌了，开始解释、表忠心。越解释越像渣男。</p>
+          </div>
+        </div>
+        <div class="bg-green-500/5 border border-green-500/20 rounded-xl p-5 flex items-center gap-4">
+          <div class="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <div class="text-xs text-green-400 font-mono uppercase mb-1">AI 说</div>
+            <p class="text-sm text-gray-300">"这是 <strong class="text-white">服从性测试</strong>。别解释。用 <strong class="text-white">框架控制</strong>反转：'你是不是想让我说 yes 然后截图发闺蜜？' 把测试变成<strong class="text-white">调情</strong>。"</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 场景 5：升级关系 -->
+      <div class="reveal grid md:grid-cols-2 gap-3">
+        <div class="bg-red-500/5 border border-red-500/20 rounded-xl p-5 flex items-center gap-4">
+          <div class="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/30 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          </div>
+          <div>
+            <div class="text-xs text-red-400 font-mono uppercase mb-1">想牵手 / 接吻</div>
+            <p class="text-sm text-gray-400">不知道时机对不对。怕被拒绝后连朋友都做不成。于是什么都没做。</p>
+          </div>
+        </div>
+        <div class="bg-green-500/5 border border-green-500/20 rounded-xl p-5 flex items-center gap-4">
+          <div class="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <div class="text-xs text-green-400 font-mono uppercase mb-1">AI 说</div>
+            <p class="text-sm text-gray-300">"她刚才<strong class="text-white"> IOI 信号</strong>：身体前倾 + 眼神停留超过 3 秒 + 主动碰你手臂。<strong class="text-white">进挪升高</strong>窗口打开。下一步：靠近，停顿 2 秒，看她的眼睛。如果没后退——吻她。"</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 场景 6：被已读不回 -->
+      <div class="reveal grid md:grid-cols-2 gap-3">
+        <div class="bg-red-500/5 border border-red-500/20 rounded-xl p-5 flex items-center gap-4">
+          <div class="w-10 h-10 rounded-lg bg-red-500/10 border border-red-500/30 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          </div>
+          <div>
+            <div class="text-xs text-red-400 font-mono uppercase mb-1">被已读不回</div>
+            <p class="text-sm text-gray-400">焦虑、反复看手机。连发 3 条追问。她彻底消失了。</p>
+          </div>
+        </div>
+        <div class="bg-green-500/5 border border-green-500/20 rounded-xl p-5 flex items-center gap-4">
+          <div class="w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/30 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <div class="text-xs text-green-400 font-mono uppercase mb-1">AI 说</div>
+            <p class="text-sm text-gray-300">"别追。启动 <strong class="text-white">间歇性奖赏</strong> + <strong class="text-white">冷冻机制</strong>：3 天不联系，第 4 天发一条跟她无关的有趣动态。让她主动来问你。"</p>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- RIA++ 六段结构 -->
-    <div class="text-center mb-10">
-      <h3 class="text-xl font-bold mb-2">每个技能包含 <span class="grad-rose">RIA++ 六段</span></h3>
-      <p class="text-sm text-gray-500">不是摘要，不是读后感 — 是可执行的作战手册</p>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-3 max-w-4xl mx-auto">
-
-      <div class="reveal bg-[var(--surface)] border border-[var(--border)] rounded-xl p-5 card-h">
-        <div class="flex items-center gap-2 mb-2">
-          <span class="w-7 h-7 rounded-lg bg-rose-500/15 border border-rose-500/30 flex items-center justify-center text-xs font-black text-rose-400">R</span>
-          <span class="text-sm font-bold">Reading</span>
-        </div>
-        <p class="text-xs text-gray-400">原文引用（≤150 字）。可追溯到原书页。</p>
-      </div>
-
-      <div class="reveal bg-[var(--surface)] border border-[var(--border)] rounded-xl p-5 card-h">
-        <div class="flex items-center gap-2 mb-2">
-          <span class="w-7 h-7 rounded-lg bg-purple-500/15 border border-purple-500/30 flex items-center justify-center text-xs font-black text-purple-400">I</span>
-          <span class="text-sm font-bold">Interpretation</span>
-        </div>
-        <p class="text-xs text-gray-400">方法论骨架。用自己的话解释，3 秒理解。</p>
-      </div>
-
-      <div class="reveal bg-[var(--surface)] border border-[var(--border)] rounded-xl p-5 card-h">
-        <div class="flex items-center gap-2 mb-2">
-          <span class="w-7 h-7 rounded-lg bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-xs font-black text-blue-400">A1</span>
-          <span class="text-sm font-bold">Past Application</span>
-        </div>
-        <p class="text-xs text-gray-400">书中案例。类比素材，知道别人怎么用的。</p>
-      </div>
-
-      <div class="reveal bg-[var(--surface)] border border-rose-500/30 rounded-xl p-5 card-h">
-        <div class="flex items-center gap-2 mb-2">
-          <span class="w-7 h-7 rounded-lg bg-rose-500/15 border border-rose-500/30 flex items-center justify-center text-xs font-black text-rose-400">A2</span>
-          <span class="text-sm font-bold">Future Trigger ★</span>
-        </div>
-        <p class="text-xs text-gray-400">触发场景 + 语言信号。<strong class="text-white">什么时候用</strong>。</p>
-      </div>
-
-      <div class="reveal bg-[var(--surface)] border border-rose-500/30 rounded-xl p-5 card-h">
-        <div class="flex items-center gap-2 mb-2">
-          <span class="w-7 h-7 rounded-lg bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-xs font-black text-amber-400">E</span>
-          <span class="text-sm font-bold">Execution</span>
-        </div>
-        <p class="text-xs text-gray-400">1-2-3 可执行步骤。<strong class="text-white">具体怎么用</strong>。</p>
-      </div>
-
-      <div class="reveal bg-[var(--surface)] border border-rose-500/30 rounded-xl p-5 card-h">
-        <div class="flex items-center gap-2 mb-2">
-          <span class="w-7 h-7 rounded-lg bg-red-500/15 border border-red-500/30 flex items-center justify-center text-xs font-black text-red-400">B</span>
-          <span class="text-sm font-bold">Boundary ★</span>
-        </div>
-        <p class="text-xs text-gray-400">不适用场景 + 失败模式。<strong class="text-white">防止乱用</strong>。</p>
-      </div>
-
-    </div>
-
-    <div class="text-center mt-10">
+    <div class="text-center mt-12 reveal">
       <p class="text-sm text-gray-500">
-        ★ 标记的段落是 RIA-TV++ 蒸馏流水线的独创增强 — 传统 RIA 只有 R/I/A 三段
+        从"不知道说什么"到"每一步都有方案" · 从"怕被拒绝"到"精准把握时机"
       </p>
     </div>
 
   </div>
 </section>
 
-<!-- 18 本书 -->
-<section id="books" class="py-24">
-  <div class="max-w-6xl mx-auto px-6">
+<!-- 你的第二大脑 -->
+<section class="py-24 bg-[var(--bg-elev)] border-y border-[var(--border)]">
+  <div class="max-w-4xl mx-auto px-6 text-center">
 
-    <div class="text-center mb-16">
-      <p class="text-sm text-purple-400 font-mono mb-3 tracking-widest uppercase">Library</p>
-      <h2 class="text-3xl md:text-4xl font-black mb-4">18 本书。161 个技能。</h2>
-      <p class="text-gray-400">点击查看每个技能包的完整内容</p>
+    <h2 class="text-3xl md:text-5xl font-black mb-8">
+      你的 AI 变成了<br>
+      <span class="grad-purple">约会教练</span>。
+    </h2>
+
+    <p class="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
+      不需要背话术，不需要记住理论。<br>
+      对 AI 说你在面对什么——它从 161 个技能里挑出最合适的，<strong class="text-white">给你具体怎么做</strong>。
+    </p>
+
+    <!-- 示例对话 -->
+    <div class="bg-[var(--surface)] border border-[var(--border)] rounded-2xl p-6 max-w-2xl mx-auto text-left mb-12">
+      <div class="space-y-4">
+
+        <div class="flex gap-3">
+          <div class="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0 text-xs font-bold text-blue-400">你</div>
+          <div class="bg-blue-500/10 rounded-xl rounded-tl-none px-4 py-2.5 text-sm text-gray-200">
+            她突然问我"你觉得我们是什么关系"，怎么回？
+          </div>
+        </div>
+
+        <div class="flex gap-3">
+          <div class="w-8 h-8 rounded-full bg-rose-500/20 flex items-center justify-center flex-shrink-0 text-xs font-bold text-rose-400">AI</div>
+          <div class="bg-[var(--bg)] border border-rose-500/20 rounded-xl rounded-tl-none px-4 py-3 text-sm text-gray-200">
+            <p class="mb-2">这是<strong class="text-rose-300">关系定义测试</strong>。她想知道你的态度，但直接回答会让你丧失主动权。</p>
+            <p class="mb-2"><strong class="text-white">策略：框架控制 + 情绪推拉</strong></p>
+            <p class="text-gray-400 mb-2">回复建议（选一个适合你风格的）：</p>
+            <div class="space-y-1.5 text-gray-300">
+              <p class="bg-[var(--bg-elev)] rounded px-3 py-1.5">→ 调皮型："现在啊？还在考察期。你表现不错，继续努力。"</p>
+              <p class="bg-[var(--bg-elev)] rounded px-3 py-1.5">→ 暧昧型："别人问我会说朋友。但你不是别人对吧？"</p>
+              <p class="bg-[var(--bg-elev)] rounded px-3 py-1.5">→ 霸气型："你希望是什么关系？先说说你能提供什么。"</p>
+            </div>
+            <p class="text-xs text-gray-500 mt-3">⚠️ 边界：如果她语气严肃而非调情，不要用以上话术，认真回答。</p>
+          </div>
+        </div>
+
+      </div>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-
-      <!-- 书目卡片（用 JS 生成或手写） -->
-      <a href="https://github.com/SonicBotMan/dating-skills/tree/main/mystery-method" target="_blank" rel="noopener" class="reveal bg-[var(--surface)] border border-[var(--border)] rounded-xl p-5 card-h">
-        <div class="flex items-start justify-between mb-2">
-          <span class="text-lg font-bold">谜男方法</span>
-          <span class="text-xs px-2 py-0.5 rounded-full bg-rose-500/15 text-rose-400 font-mono">20</span>
-        </div>
-        <p class="text-xs text-gray-500">Mystery · M3 模型 · PUA 开山之作</p>
-      </a>
-
-      <a href="https://github.com/SonicBotMan/dating-skills/tree/main/beast-gentleman" target="_blank" rel="noopener" class="reveal bg-[var(--surface)] border border-[var(--border)] rounded-xl p-5 card-h">
-        <div class="flex items-start justify-between mb-2">
-          <span class="text-lg font-bold">野兽绅士</span>
-          <span class="text-xs px-2 py-0.5 rounded-full bg-rose-500/15 text-rose-400 font-mono">18</span>
-        </div>
-        <p class="text-xs text-gray-500">巫家民（Tango）· 中文圈代表作</p>
-      </a>
-
-      <a href="https://github.com/SonicBotMan/dating-skills/tree/main/the-game-neil" target="_blank" rel="noopener" class="reveal bg-[var(--surface)] border border-[var(--border)] rounded-xl p-5 card-h">
-        <div class="flex items-start justify-between mb-2">
-          <span class="text-lg font-bold">把妹达人 The Game</span>
-          <span class="text-xs px-2 py-0.5 rounded-full bg-rose-500/15 text-rose-400 font-mono">12</span>
-        </div>
-        <p class="text-xs text-gray-500">尼尔·施特劳斯 · 纪实文学经典</p>
-      </a>
-
-      <a href="https://github.com/SonicBotMan/dating-skills/tree/main/rules-of-the-game" target="_blank" rel="noopener" class="reveal bg-[var(--surface)] border border-[var(--border)] rounded-xl p-5 card-h">
-        <div class="flex items-start justify-between mb-2">
-          <span class="text-lg font-bold">把妹达人圣经</span>
-          <span class="text-xs px-2 py-0.5 rounded-full bg-rose-500/15 text-rose-400 font-mono">11</span>
-        </div>
-        <p class="text-xs text-gray-500">尼尔·施特劳斯 · 30 天实战手册</p>
-      </a>
-
-      <a href="https://github.com/SonicBotMan/dating-skills/tree/main/juggler-method" target="_blank" rel="noopener" class="reveal bg-[var(--surface)] border border-[var(--border)] rounded-xl p-5 card-h">
-        <div class="flex items-start justify-between mb-2">
-          <span class="text-lg font-bold">杂耍人方法</span>
-          <span class="text-xs px-2 py-0.5 rounded-full bg-rose-500/15 text-rose-400 font-mono">12</span>
-        </div>
-        <p class="text-xs text-gray-500">Wayne Elise · 真诚流方法论</p>
-      </a>
-
-      <a href="https://github.com/SonicBotMan/dating-skills/tree/main/emotional-flow" target="_blank" rel="noopener" class="reveal bg-[var(--surface)] border border-[var(--border)] rounded-xl p-5 card-h">
-        <div class="flex items-start justify-between mb-2">
-          <span class="text-lg font-bold">情绪流方法论</span>
-          <span class="text-xs px-2 py-0.5 rounded-full bg-rose-500/15 text-rose-400 font-mono">12</span>
-        </div>
-        <p class="text-xs text-gray-500">损友 · 情绪主导吸引力</p>
-      </a>
-
-      <a href="https://github.com/SonicBotMan/dating-skills/tree/main/art-of-seduction" target="_blank" rel="noopener" class="reveal bg-[var(--surface)] border border-[var(--border)] rounded-xl p-5 card-h">
-        <div class="flex items-start justify-between mb-2">
-          <span class="text-lg font-bold">诱惑的艺术</span>
-          <span class="text-xs px-2 py-0.5 rounded-full bg-purple-500/15 text-purple-400 font-mono">8</span>
-        </div>
-        <p class="text-xs text-gray-500">罗伯特·格林 · 权谋与魅力</p>
-      </a>
-
-      <a href="https://github.com/SonicBotMan/dating-skills/tree/main/devil-chat" target="_blank" rel="noopener" class="reveal bg-[var(--surface)] border border-[var(--border)] rounded-xl p-5 card-h">
-        <div class="flex items-start justify-between mb-2">
-          <span class="text-lg font-bold">魔鬼聊天术</span>
-          <span class="text-xs px-2 py-0.5 rounded-full bg-purple-500/15 text-purple-400 font-mono">8</span>
-        </div>
-        <p class="text-xs text-gray-500">阮琦 · 线上聊天方法论</p>
-      </a>
-
-      <a href="https://github.com/SonicBotMan/dating-skills/tree/main/influence-cialdini" target="_blank" rel="noopener" class="reveal bg-[var(--surface)] border border-[var(--border)] rounded-xl p-5 card-h">
-        <div class="flex items-start justify-between mb-2">
-          <span class="text-lg font-bold">影响力</span>
-          <span class="text-xs px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-400 font-mono">6</span>
-        </div>
-        <p class="text-xs text-gray-500">罗伯特·西奥迪尼 · 6 大说服原理</p>
-      </a>
-
-      <a href="https://github.com/SonicBotMan/dating-skills/tree/main/cai-kangyong-talk" target="_blank" rel="noopener" class="reveal bg-[var(--surface)] border border-[var(--border)] rounded-xl p-5 card-h">
-        <div class="flex items-start justify-between mb-2">
-          <span class="text-lg font-bold">蔡康永的说话之道</span>
-          <span class="text-xs px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-400 font-mono">6</span>
-        </div>
-        <p class="text-xs text-gray-500">蔡康永 · 高情商沟通</p>
-      </a>
-
-      <a href="https://github.com/SonicBotMan/dating-skills/tree/main/cold-reading-book" target="_blank" rel="noopener" class="reveal bg-[var(--surface)] border border-[var(--border)] rounded-xl p-5 card-h">
-        <div class="flex items-start justify-between mb-2">
-          <span class="text-lg font-bold">冷读术</span>
-          <span class="text-xs px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-400 font-mono">6</span>
-        </div>
-        <p class="text-xs text-gray-500">瞬间读懂人心的技巧</p>
-      </a>
-
-      <a href="https://github.com/SonicBotMan/dating-skills/tree/main/body-language" target="_blank" rel="noopener" class="reveal bg-[var(--surface)] border border-[var(--border)] rounded-xl p-5 card-h">
-        <div class="flex items-start justify-between mb-2">
-          <span class="text-lg font-bold">身体语言密码</span>
-          <span class="text-xs px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-400 font-mono">6</span>
-        </div>
-        <p class="text-xs text-gray-500">非语言沟通的科学</p>
-      </a>
-
-      <a href="https://github.com/SonicBotMan/dating-skills/tree/main/evolutionary-psychology" target="_blank" rel="noopener" class="reveal bg-[var(--surface)] border border-[var(--border)] rounded-xl p-5 card-h">
-        <div class="flex items-start justify-between mb-2">
-          <span class="text-lg font-bold">进化心理学</span>
-          <span class="text-xs px-2 py-0.5 rounded-full bg-blue-500/15 text-blue-400 font-mono">6</span>
-        </div>
-        <p class="text-xs text-gray-500">戴维·巴斯 · 吸引力的底层逻辑</p>
-      </a>
-
-      <a href="https://github.com/SonicBotMan/dating-skills/tree/main/five-love-capabilities" target="_blank" rel="noopener" class="reveal bg-[var(--surface)] border border-[var(--border)] rounded-xl p-5 card-h">
-        <div class="flex items-start justify-between mb-2">
-          <span class="text-lg font-bold">爱的五种能力</span>
-          <span class="text-xs px-2 py-0.5 rounded-full bg-blue-500/15 text-blue-400 font-mono">5</span>
-        </div>
-        <p class="text-xs text-gray-500">情绪管理 + 述情 + 共情</p>
-      </a>
-
-      <a href="https://github.com/SonicBotMan/dating-skills/tree/main/art-of-communication" target="_blank" rel="noopener" class="reveal bg-[var(--surface)] border border-[var(--border)] rounded-xl p-5 card-h">
-        <div class="flex items-start justify-between mb-2">
-          <span class="text-lg font-bold">沟通的艺术</span>
-          <span class="text-xs px-2 py-0.5 rounded-full bg-blue-500/15 text-blue-400 font-mono">5</span>
-        </div>
-        <p class="text-xs text-gray-500">罗纳德·阿德勒 · 人际沟通教科书</p>
-      </a>
-
-      <a href="https://github.com/SonicBotMan/dating-skills/tree/main/art-of-flirting" target="_blank" rel="noopener" class="reveal bg-[var(--surface)] border border-[var(--border)] rounded-xl p-5 card-h">
-        <div class="flex items-start justify-between mb-2">
-          <span class="text-lg font-bold">调情的艺术</span>
-          <span class="text-xs px-2 py-0.5 rounded-full bg-green-500/15 text-green-400 font-mono">7</span>
-        </div>
-        <p class="text-xs text-gray-500">轻松建立吸引力的技巧</p>
-      </a>
-
-      <a href="https://github.com/SonicBotMan/dating-skills/tree/main/extreme-scripts" target="_blank" rel="noopener" class="reveal bg-[var(--surface)] border border-[var(--border)] rounded-xl p-5 card-h">
-        <div class="flex items-start justify-between mb-2">
-          <span class="text-lg font-bold">极限话术</span>
-          <span class="text-xs px-2 py-0.5 rounded-full bg-green-500/15 text-green-400 font-mono">6</span>
-        </div>
-        <p class="text-xs text-gray-500">死囚漫步 · 实战话术集</p>
-      </a>
-
-      <a href="https://github.com/SonicBotMan/dating-skills/tree/main/fanchen-scripts" target="_blank" rel="noopener" class="reveal bg-[var(--surface)] border border-[var(--border)] rounded-xl p-5 card-h">
-        <div class="flex items-start justify-between mb-2">
-          <span class="text-lg font-bold">梵尘话术</span>
-          <span class="text-xs px-2 py-0.5 rounded-full bg-green-500/15 text-green-400 font-mono">6</span>
-        </div>
-        <p class="text-xs text-gray-500">梵尘 · 中文实战话术</p>
-      </a>
-
-    </div>
+    <p class="text-sm text-gray-500">
+      这就是 161 个技能在你 AI 助手里的样子。<br>
+      不是给你一本书，是给你一个<strong class="text-gray-300">实时教练</strong>。
+    </p>
 
   </div>
 </section>
 
-<!-- 快速开始 -->
-<section id="install" class="py-24 bg-[var(--bg-elev)] border-y border-[var(--border)]">
+<!-- 安装 -->
+<section id="install" class="py-24">
   <div class="max-w-3xl mx-auto px-6">
 
     <div class="text-center mb-12">
       <h2 class="text-2xl md:text-3xl font-black mb-3">装到你的 AI 助手</h2>
-      <p class="text-gray-400 text-sm">让 AI 在对话中自动调用恋爱技能</p>
-    </div>
+      <p class="text-gray-400 text-sm mb-8">让 AI 在对话中自动调用 161 个恋爱技能</p>
 
-    <div class="flex border-b border-[var(--border)] mb-6 max-w-md mx-auto">
-      <button class="tab-btn active flex-1 px-4 py-2 text-sm font-medium border-b-2 border-rose-500 text-white" data-tab="hermes">Hermes</button>
-      <button class="tab-btn flex-1 px-4 py-2 text-sm font-medium border-b-2 border-transparent text-gray-400 hover:text-white transition" data-tab="claude">Claude Code</button>
-      <button class="tab-btn flex-1 px-4 py-2 text-sm font-medium border-b-2 border-transparent text-gray-400 hover:text-white transition" data-tab="read">直接看</button>
-    </div>
-
-    <div class="tab-content" data-content="hermes">
-      <div class="code-block rounded-xl p-5">
-        <pre class="text-gray-300"><code><span class="text-purple-400">git</span> clone https://github.com/SonicBotMan/dating-skills.git
-
-<span class="text-gray-500"># 复制到 Hermes skills 目录</span>
-<span class="text-purple-400">cp</span> -r dating-skills/mystery-method/skills/ ~/.hermes/skills/dating/mystery/
-<span class="text-purple-400">cp</span> -r dating-skills/beast-gentleman/skills/ ~/.hermes/skills/dating/beast/
-
-<span class="text-gray-500"># Agent 会根据 description 自动激活</span></code></pre>
+      <div class="flex border-b border-[var(--border)] mb-6 max-w-md mx-auto">
+        <button class="tab-btn active flex-1 px-4 py-2 text-sm font-medium border-b-2 border-rose-500 text-white" data-tab="hermes">Hermes Agent</button>
+        <button class="tab-btn flex-1 px-4 py-2 text-sm font-medium border-b-2 border-transparent text-gray-400 hover:text-white transition" data-tab="claude">Claude Code</button>
+        <button class="tab-btn flex-1 px-4 py-2 text-sm font-medium border-b-2 border-transparent text-gray-400 hover:text-white transition" data-tab="read">直接看</button>
       </div>
-    </div>
 
-    <div class="tab-content hidden" data-content="claude">
-      <div class="code-block rounded-xl p-5">
-        <pre class="text-gray-300"><code><span class="text-gray-500"># 在 CLAUDE.md 中添加：</span>
-See dating-skills/mystery-method/skills/ for
-dating methodology skills.</code></pre>
+      <div class="tab-content" data-content="hermes">
+        <div class="code-block rounded-xl p-5 text-left">
+          <pre class="text-gray-300"><code><span class="text-purple-400">git</span> clone https://github.com/SonicBotMan/dating-skills.git
+<span class="text-purple-400">cp</span> -r dating-skills/*/skills/ ~/.hermes/skills/dating/</code></pre>
+        </div>
       </div>
-    </div>
 
-    <div class="tab-content hidden" data-content="read">
-      <div class="code-block rounded-xl p-5">
-        <pre class="text-gray-300"><code><span class="text-gray-500"># 直接在 GitHub 上读：</span>
-<span class="text-yellow-300">mystery-method/skills/</span>     <span class="text-gray-500"># 20 个技能</span>
-<span class="text-yellow-300">beast-gentleman/skills/</span>     <span class="text-gray-500"># 18 个技能</span>
-<span class="text-yellow-300">the-game-neil/skills/</span>       <span class="text-gray-500"># 12 个技能</span>
+      <div class="tab-content hidden" data-content="claude">
+        <div class="code-block rounded-xl p-5 text-left">
+          <pre class="text-gray-300"><code><span class="text-gray-500"># 在 CLAUDE.md 中添加：</span>
+See dating-skills/ for 161 dating
+methodology skills from 18 books.</code></pre>
+        </div>
+      </div>
 
-<span class="text-gray-500"># 每个 skill 都是完整的 RIA++ 六段结构</span></code></pre>
+      <div class="tab-content hidden" data-content="read">
+        <div class="code-block rounded-xl p-5 text-left">
+          <pre class="text-gray-300"><code><span class="text-gray-500"># 直接在 GitHub 浏览：</span>
+<span class="text-yellow-300">mystery-method/</span>    20 技能 <span class="text-gray-500"># M3 模型</span>
+<span class="text-yellow-300">beast-gentleman/</span>   18 技能 <span class="text-gray-500"># 野兽绅士</span>
+<span class="text-yellow-300">the-game-neil/</span>     12 技能 <span class="text-gray-500"># 把妹达人</span>
+<span class="text-gray-500"># ...共 18 本书 161 个技能</span></code></pre>
+        </div>
       </div>
     </div>
 
     <!-- 分享 -->
-    <div class="text-center mt-12 pt-8 border-t border-[var(--border)]">
-      <p class="text-gray-400 mb-6">觉得有用？分享给朋友</p>
+    <div class="text-center pt-8 border-t border-[var(--border)]">
+      <p class="text-gray-400 mb-6">觉得有用？分享给兄弟</p>
       <div class="flex flex-wrap justify-center gap-2">
         <a href="#" onclick="share(event,'twitter')" class="inline-flex items-center gap-1.5 px-3 py-2 border border-[var(--border)] rounded-lg text-xs text-gray-400 hover:text-white hover:border-[var(--border-lt)] transition">
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           X
         </a>
         <a href="#" onclick="share(event,'weibo')" class="inline-flex items-center gap-1.5 px-3 py-2 border border-[var(--border)] rounded-lg text-xs text-gray-400 hover:text-white hover:border-[var(--border-lt)] transition">
-          <span class="text-xs">微博</span>
+          <span>微博</span>
         </a>
         <button onclick="copyLink()" class="inline-flex items-center gap-1.5 px-3 py-2 border border-[var(--border)] rounded-lg text-xs text-gray-400 hover:text-white hover:border-[var(--border-lt)] transition">
           <span id="copy-text">复制链接</span>
@@ -514,92 +389,66 @@ dating methodology skills.</code></pre>
     <p class="text-xs text-gray-600">
       <a href="https://github.com/SonicBotMan/dating-skills" class="hover:text-gray-400 transition">dating-skills</a> ·
       MIT · 技能内容提取自原书，版权归原作者所有<br>
-      由 book2skill 流水线（RIA-TV++）自动蒸馏产出
+      18 本书 · 161 个技能 · 忠实于原文，不做道德审查
     </p>
   </div>
 </footer>
 
 <script>
-const URL = 'https://github.com/SonicBotMan/dating-skills';
-const TEXT = '18 本恋爱圣经 → 161 个 AI 技能。你也可以是恋爱专家。';
+const PAGE_URL = 'https://sonicbotman.github.io/dating-skills/';
+const SHARE_TEXT = '161 个恋爱技能装进你的 AI 助手。她发来一条消息，你的 AI 告诉你怎么回。';
 
-function share(e, platform) {
+function share(e, p) {
   e.preventDefault();
-  const t = encodeURIComponent(TEXT);
-  const u = encodeURIComponent(URL);
+  const t = encodeURIComponent(SHARE_TEXT), u = encodeURIComponent(PAGE_URL);
   let url = '';
-  if (platform === 'twitter') url = `https://twitter.com/intent/tweet?text=${t}&url=${u}`;
-  else if (platform === 'weibo') url = `https://service.weibo.com/share/share.php?title=${encodeURIComponent(TEXT+' '+URL)}&url=${u}`;
+  if (p === 'twitter') url = `https://twitter.com/intent/tweet?text=${t}&url=${u}`;
+  else if (p === 'weibo') url = `https://service.weibo.com/share/share.php?title=${encodeURIComponent(SHARE_TEXT+' '+PAGE_URL)}&url=${u}`;
   if (url) window.open(url, '_blank', 'width=600,height=500,noopener');
 }
 
 function copyLink() {
-  navigator.clipboard.writeText(URL).then(() => {
+  navigator.clipboard.writeText(PAGE_URL).then(() => {
     document.getElementById('copy-text').textContent = '已复制';
     setTimeout(() => { document.getElementById('copy-text').textContent = '复制链接'; }, 2000);
   });
 }
 
-// Number animation
-function animateNumber(el, target, duration = 1500) {
-  const start = performance.now();
-  function step(now) {
-    const p = Math.min((now - start) / duration, 1);
-    const eased = p === 1 ? 1 : 1 - Math.pow(2, -10 * p);
-    el.textContent = Math.floor(target * eased);
+function animateNumber(el, target, dur = 1500) {
+  const s = performance.now();
+  function step(n) {
+    const p = Math.min((n - s) / dur, 1);
+    const e = p === 1 ? 1 : 1 - Math.pow(2, -10 * p);
+    el.textContent = Math.floor(target * e);
     if (p < 1) requestAnimationFrame(step);
     else el.textContent = target;
   }
   requestAnimationFrame(step);
 }
 
-// Reveal
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
+const obs = new IntersectionObserver((es) => {
+  es.forEach(e => {
     if (e.isIntersecting) {
       e.target.classList.add('visible');
-      const num = e.target.querySelector('[data-target]');
-      if (num && !num.dataset.done) {
-        num.dataset.done = '1';
-        animateNumber(num, parseInt(num.dataset.target));
-      }
+      const n = e.target.querySelector('[data-target]') || (e.target.hasAttribute('data-target') ? e.target : null);
+      if (n && !n.dataset.done) { n.dataset.done = '1'; animateNumber(n, parseInt(n.dataset.target)); }
     }
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+document.querySelectorAll('.reveal, [data-target]').forEach(el => obs.observe(el));
 
-// Also animate hero numbers
-document.querySelectorAll('[data-target]').forEach(el => {
-  if (!el.closest('.reveal')) {
-    const heroObs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting && !el.dataset.done) {
-          el.dataset.done = '1';
-          animateNumber(el, parseInt(el.dataset.target));
-          heroObs.disconnect();
-        }
-      });
-    }, { threshold: 0.3 });
-    heroObs.observe(el);
-  }
-});
-
-// Tabs
-document.querySelectorAll('.tab-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const t = btn.dataset.tab;
-    document.querySelectorAll('.tab-btn').forEach(b => {
-      b.classList.remove('active', 'border-rose-500', 'text-white');
-      b.classList.add('border-transparent', 'text-gray-400');
+document.querySelectorAll('.tab-btn').forEach(b => {
+  b.addEventListener('click', () => {
+    const t = b.dataset.tab;
+    document.querySelectorAll('.tab-btn').forEach(x => {
+      x.classList.remove('active','border-rose-500','text-white');
+      x.classList.add('border-transparent','text-gray-400');
     });
-    btn.classList.add('active', 'border-rose-500', 'text-white');
-    btn.classList.remove('border-transparent', 'text-gray-400');
-    document.querySelectorAll('.tab-content').forEach(c => {
-      c.classList.toggle('hidden', c.dataset.content !== t);
-    });
+    b.classList.add('active','border-rose-500','text-white');
+    b.classList.remove('border-transparent','text-gray-400');
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.toggle('hidden', c.dataset.content !== t));
   });
 });
 </script>
-
 </body>
 </html>
