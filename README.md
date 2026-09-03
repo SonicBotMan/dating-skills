@@ -1,6 +1,6 @@
 # 她发来一条消息。你的 AI 告诉你怎么回。
 
-> 161 个恋爱技能装进你的 AI 助手。不需要背话术，不需要读完 18 本书。
+> 160 个恋爱技能装进你的 AI 助手。不需要背话术，不需要读完 18 本书。
 
 **[在线体验 →](https://sonicbotman.github.io/dating-skills/)**
 
@@ -19,14 +19,21 @@
 
 ---
 
-## 一条命令安装
+## 使用方式
 
-```bash
+把仓库给 AI 助手用（Claude Code / Cursor / 任何能读仓库的 Agent）：
+
+```
 git clone https://github.com/SonicBotMan/dating-skills.git
-cp -r dating-skills/*/skills/ ~/.hermes/skills/dating/
 ```
 
-装完后对 AI 说：「她发来一条消息说嗯，怎么回？」或「约会冷场了怎么办」
+然后在 CLAUDE.md / 系统提示里加一行：
+
+```
+See dating-skills/ — 先读 ROUTER.md 按场景定位技能, 组合多个流派给出 2-3 种风格回复候选。
+```
+
+装完后对 AI 说：「她发来一条消息说嗯，怎么回？」或「约会冷场了怎么办」——AI 会按 `ROUTER.md` 定位技能并给出多风格候选回复。
 
 > 不用 Hermes？[Claude Code 用法](https://github.com/SonicBotMan/dating-skills#在-claude-code--cursor-中使用) · [直接在 GitHub 看](https://github.com/SonicBotMan/dating-skills/tree/main/mystery-method/skills)
 
@@ -52,7 +59,7 @@ AI：这是关系定义测试。她想知道你的态度，但直接回答会丧
 
 ---
 
-## 18 本书 · 161 个技能
+## 18 本书 · 160 个技能
 
 | 书名 | 作者 | 技能数 |
 |------|------|-------|
