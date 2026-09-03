@@ -92,9 +92,46 @@ nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-f
 .sec-head h2{font-size:38px;font-weight:800;letter-spacing:-.02em;line-height:1.25}
 .sec-head p{font-size:15px;color:var(--text-3);margin-top:12px}
 
-/* ============ Before / After ============ */
-.ba-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-.ba{border-radius:var(--r-card);padding:16px 20px;display:flex;gap:14px;align-items:center;border:1px solid transparent}
+/* ============ 场景大舞台 (Tab + Pixel Stage) ============ */
+.scn-tabs{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.scn-tab{border:1px solid var(--border-1);background:#fff;border-radius:var(--r-pill);padding:9px 20px;font-size:13.5px;font-weight:600;color:var(--text-2);cursor:pointer;font-family:inherit;transition:all .2s ease}
+.scn-tab:hover{border-color:var(--brand-3);color:var(--text-1)}
+.scn-tab.active{background:var(--btn-primary);border-color:var(--btn-primary);color:#fff}
+.stage{background:#fff;border:1px solid var(--border-2);border-radius:20px;padding:36px;max-width:920px;margin:0 auto;display:grid;grid-template-columns:288px 1fr;gap:40px;align-items:center;box-shadow:0 1px 3px rgba(0,0,0,.03)}
+.stage-px{position:relative;background:var(--bg-block);border:1px solid var(--border-2);border-radius:14px;overflow:hidden}
+.stage-px img{width:100%;display:block;image-rendering:pixelated;image-rendering:crisp-edges}
+.stage-px .tagline{position:absolute;left:0;right:0;bottom:0;padding:8px 14px;font-family:var(--mono);font-size:11.5px;color:var(--text-3);background:linear-gradient(transparent,rgba(255,255,255,.92) 55%)}
+.stage-right{display:flex;flex-direction:column;gap:16px}
+.scn-block{border-radius:14px;padding:18px 22px;border:1px solid transparent}
+.scn-bad{background:var(--err-bg);border-color:var(--err-bd)}
+.scn-good{background:var(--ok-bg);border-color:var(--ok-bd)}
+.scn-head{display:flex;align-items:center;gap:9px;margin-bottom:7px}
+.scn-ico{width:24px;height:24px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;flex:none;font-weight:700}
+.scn-bad .scn-ico{background:rgba(246,64,65,.1);color:var(--err)}
+.scn-good .scn-ico{background:rgba(12,191,91,.12);color:var(--ok)}
+.scn-label{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;font-weight:500}
+.scn-bad .scn-label{color:var(--err)}
+.scn-good .scn-label{color:var(--ok)}
+.scn-block p{font-size:14.5px;color:var(--text-2)}
+.scn-good p{color:var(--text-1)}
+.scn-good p strong{color:#088f50;font-weight:700}
+.scn-skill{display:inline-flex;margin-top:10px;background:var(--brand-1);color:var(--brand-9);border-radius:var(--r-pill);padding:3px 13px;font-size:12px;font-weight:700}
+.stage-foot{display:flex;justify-content:space-between;align-items:center;max-width:920px;margin:18px auto 0}
+.stage-dots{display:flex;gap:7px}
+.dot{width:7px;height:7px;border-radius:var(--r-pill);background:var(--border-1);cursor:pointer;transition:all .25s}
+.dot.active{background:var(--brand-8);width:22px}
+.stage-progress{font-family:var(--mono);font-size:11.5px;color:var(--text-3)}
+.stage-panel{display:none;min-height:340px}
+.stage-panel.show{min-height:340px}
+.stage-panel.show{display:grid;animation:stageIn .45s ease}
+@keyframes stageIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media(max-width:860px){
+  .stage{grid-template-columns:1fr;padding:22px;gap:22px}
+  .stage-px{max-width:340px;margin:0 auto}
+  .scn-tabs{overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;padding-bottom:6px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .scn-tabs::-webkit-scrollbar{display:none}
+  .scn-tab{white-space:nowrap;flex:none}
+}
 
 /* ============ 像素场景 ============ */
 .px-cell{width:96px;height:64px;flex:none;background:var(--bg-block);border:1px solid var(--border-2);border-radius:8px;overflow:hidden;position:relative}
@@ -254,118 +291,132 @@ footer .f-meta{margin-top:8px;color:rgba(255,255,255,.38);font-size:12px}
   </div>
 </section>
 
-<!-- Before / After -->
+<!-- Before / After: 场景大舞台 -->
 <section class="section" id="compare" style="padding-top:12px">
   <div class="wrap">
     <div class="sec-head">
       <div class="sec-kicker">Before &amp; After</div>
       <h2>你能变成什么</h2>
-      <p>6 个真实场景——没有 AI vs 有了 AI</p>
+      <p>6 个真实场景——左边是没有 AI 的你，右边是 AI 给你的方案</p>
     </div>
 
-    <div class="ba-row reveal">
-      <div class="ba ba-bad"><div class="px-cell"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABACAYAAADlNHIOAAABZElEQVR4nO3bIU8DMRiH8R3B3ueYWCaYQaHQfASCmgNDAmLJ1JIJlmDAoQgfYRqFwoBYJvg0Q2BoSWiabvcs6fNzS7dcc/+8fZvurteTJEmSVJuGnsCunY+vN/Qcfnt5ug/u+QE1Ef0wAJgBwA7pCXRtMZ92er2byezfcSsAZgAwA4Bl94C7h+dgX317ddFsc7w2VgDMAGAGAMvuAak1u3S8NlYAzABgBgCr7iwo5XP1lfX9o2G/6HpWAMwAYAYAswckrNZhTxgOytb8mBUAMwCYAcCKe8DJ6VnWczdvr8u9PguK9/Wl+/wUKwBmADADgGX3gNw1P/X7fe8Ju2YFwAwAZgCw7B4Qr9nT+WNWT5hNLqte82NWAMwAYAYAMwCYAcAMAGYAsOL/A9q2DT6n3gdQyAqAGQDMAGDVPReUem+3a1YAzABgBgD7czb//rEO9u3Ho0Hj+PbGY1YAzABgBiBJEuQbo95f56+JdqUAAAAASUVORK5CYII=" alt=""><span class="hx">?</span></div>
-        <div class="ico">✕</div>
-        <div>
-          <div class="tag">她发来"嗯"</div>
-          <p>你想了 10 分钟不知道怎么接。聊了 3 天，变成朋友了。</p>
-        </div>
+    <div class="scn-tabs" id="scnTabs"><button class="scn-tab active" data-i="0">她发来「嗯」</button><button class="scn-tab" data-i="1">第一次约会</button><button class="scn-tab" data-i="2">空气突然安静</button><button class="scn-tab" data-i="3">「你是不是渣男」</button><button class="scn-tab" data-i="4">想牵手 / 接吻</button><button class="scn-tab" data-i="5">被已读不回</button></div>
+    <div id="scnPanels"><div class="stage-panel show" data-i="0">
+  <div class="stage">
+    <div class="stage-px">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAACACAYAAABdhGZrAAACL0lEQVR4nO3doW4VQRiA0UKw9zkQTQUYFArNI5AqHDUkrbhJ1U0qSoIpDtXwCGgUCgOiqeBp4AnYFZtlbu93jm1mO6Jf/mRnsj06AgAAAAAAAAAAAAAAHppHozfAMm/evv8zeg/77Mvnj5N/44//10ZgHwmANAGQJgDSBECaAEgTAGlPRm+AdX24uhy9hVWdb3eL1psApAmANAGQJgDSBECaAEgTAGmrnwNc39xO3le/ODudvK89ej2HzQQgTQCkCYA0AZAmANIEQJoASFv9HGDpe/bR6zlsJgBpAiBNAKQJgDQBkCYA0gRAmu8CMenX3e9Vn//s5Omqz59jApAmANIEQJoASBMAaQIgTQCkOQdgkbv76XOCk+Ox7/nnmACkCYA0AZAmANIEQJoASBMAacPPAV6+ej35/f6lvn/76rtAC8zd1x99n38pE4A0AZAmANIEQJoASBMAaQIgbfVzgLXf8y/9/c4J2kwA0gRAmgBIEwBpAiBNAKQJgLTVzwHm3rNfXn1a9Zxgt33nPT//ZAKQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApA3//wCbzWby5xdnp5P3+a9vbod+d4iHzQQgTQCkCYA0AZAmANIEQJoASBt+DsC6zre70VvYayYAaQIgTQCkCYA0AZAmANIEQNrst/N//LyfvG//4vnx5DOst37k+jkmAGkCIE0ApAmANAGQJgDSBAAAAAAAAMBB+gs63WBPt3HURgAAAABJRU5ErkJggg==" alt="">
+      <span class="tagline">she: 嗯</span>
+    </div>
+    <div class="stage-right">
+      <div class="scn-block scn-bad">
+        <div class="scn-head"><span class="scn-ico">✕</span><span class="scn-label">没有 AI · 你的反应</span></div>
+        <p>你想了 10 分钟不知道怎么接。聊了 3 天，变成朋友了。</p>
       </div>
-      <div class="ba ba-good"><div class="px-cell"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABACAYAAADlNHIOAAABnklEQVR4nO3bIUsEQRiH8T0xus3PcAYxaDGJwexHOE0GQYug4cB0cEFBEG0mtdrMBjFZNIjB73FdqzPKLcMs++xyz68ts7cc/HnnnZ1he0XLTTZ3vqeNLzzf9XLup83Rf2DWGQDMAGCtmg+LonoOrxvdE6wAmAHADAA2T/8B2mDvqNGec39zEfQcKwBmADADgLWuB6Tu7aSaPFwG1+d1Pvwfx8PR1HErAGYAMAOAta4HxHJ7wn5/MbiumvPfP75SHl+sriwl3R+zAmAGADMAWOt7QKyqJ8Tjg37aXk/unJ7KCoAZAMwAYJ3rATH6TDeXFQAzAJgBwLJ7wMbWdtI6++XpsdNzdt2sAJgBwAwA1vn3gFyp+/8xzwM6zgBgBgBL7gGp6/6q39PvBU3v/8esAJgBwAwAltwD4jn7dHyd1BNGwwP3gn6xAmAGADMAmAHADABmADADgGWfB5RlGVyfHO4G6/yzq9tGv8PtGisAZgAwA4DN3Jlw1Xe7TbMCYAYAMwDYn73517fPYN2+vrbcc7y+8ZgVADMAmAFIkgT5AfDpb1+LZRGnAAAAAElFTkSuQmCC" alt=""></div>
-        <div class="ico">✓</div>
-        <div>
-          <div class="tag">AI 说 · 情绪推拉</div>
-          <p>"先推开（'你这嗯字打得真敷衍'），再拉近（'但我知道你在想我'）。<strong>给她一个追你的理由。</strong>"</p>
-        </div>
+      <div class="scn-block scn-good">
+        <div class="scn-head"><span class="scn-ico">✓</span><span class="scn-label">AI 说 · 两步推拉</span></div>
+        <p>“先推开（'你这嗯字打得真敷衍'），再拉近（'但我知道你在想我'）。<strong>给她一个追你的理由。</strong>”</p>
+        <span class="scn-skill">来自技能 · 情绪推拉</span>
       </div>
     </div>
-
-    <div class="ba-row reveal">
-      <div class="ba ba-bad"><div class="px-cell"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABACAYAAADlNHIOAAABUElEQVR4nO3asUoDQRCH8Shp70ksBBEsNFhYW/gAYmel2FlIRESxsBOt7EIeIbWVNjZ2Po+27ghZhpz36fn9uuO4zS5/Zm4OMhhIkiRJkiRJkqS+W6I3cDF9+fh6fbm/he+pS8v0Bv47A4AZAKzzfht7fk3f3wlWAMwAYAYAG9IbiPre8yMrAGYAMAOApfvtaGc3Ncc/P83+dE//6fNaATADgBkAzABgBgAzAJgBwKoza3YOrvnt3wVdn9cKgBkAzABg6X58fvOQ6pFXZ0dzf+Px7rrVnruow5Nxsd+2zxtZATADgBkAzABgBgAzAJgBwNL/C2qaprg+PT4o5t7b+0lqbo5zd/wuiPcXlV2/7fNGVgDMAGAGADMAmAHADABmALBv3wGvb+/FXLuxtlLMvdub63MXrN2vrb862gtPjFPP0+vX7kdWAMwAYAYgSRLkExvfVuPsstudAAAAAElFTkSuQmCC" alt=""><span class="hx">!</span></div>
-        <div class="ico">✕</div>
-        <div>
-          <div class="tag">第一次约会</div>
-          <p>不知道聊什么，手不知道放哪。约会后她再也没回过消息。</p>
-        </div>
+  </div>
+</div><div class="stage-panel" data-i="1">
+  <div class="stage">
+    <div class="stage-px">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAACACAYAAABdhGZrAAAB/ElEQVR4nO3bMYrVQACA4VW2fSexEESw0MXC2sIDiJ2VYmchKyLKFnailZ14BGsrbWzsPI/eIIPEIW/zf18bQuZl+BmYNzk5AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZruy9QC29urLjz9L118/vJN/R3t2desBwJYEQJoASBMAaQIgTQCkCYC03e9xj/b51/I/weVmBSBNAKQJgDQBkCYA0gRAmgBIO916AMfOPv++WQFIEwBpAiBNAKQJgDQBkCYA0qbvcZ/duz/1PP73b1/t02/oss+vFYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgbfVZ69nnwdfyvcA6e59fKwBpAiBNAKQJgDQBkCYA0gRA2vQ98pcXH6fuI7958WTVb/j0/u1R73Nv7fGz88X3e+zzO2IFIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEg7nf2Aw+GweP3500eL573fffg89bz56Lz76HuB0f1bmz3+Y5/fESsAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQNrwe4Cfv34vnte+dePa4nnvu7dv/uuY/uv9a8d//ezB4AnnU59fH//a+0esAKQJgDQBkCYA0gRAmgBIEwAAAAAAAAC79Bdn6lc7I54joQAAAABJRU5ErkJggg==" alt="">
+      <span class="tagline">date #1</span>
+    </div>
+    <div class="stage-right">
+      <div class="scn-block scn-bad">
+        <div class="scn-head"><span class="scn-ico">✕</span><span class="scn-label">没有 AI · 现场</span></div>
+        <p>不知道聊什么，手不知道放哪。约会后她再也没回过消息。</p>
       </div>
-      <div class="ba ba-good"><div class="px-cell"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABACAYAAADlNHIOAAABkElEQVR4nO3bPUoDQRxAcVftdE9iIYhgISGFtYUX0E4bxc5CkirBwk600S5ewVpQrGzsvImtaL0T2OHPfrwE3q8Lm924eczsTMBiZcn9DI//6o5vvj8XTd7ftdU+P0zzDAAzAKzX+a4NuTm8bV0/ExwBMAPADAAzAMwAMAPADABbun1Aqu19wcbbLPT+oigafYeOAJgBYAaANX4G/I4fQ3Pw2uSs0+dO9JnQ9+//KUcAzAAwA8CWfh+Qkz4T6Dk/5QiAGQBmAEmSIOE18eDgMPRby8fry0Ktu6O6vl9XQTADwAwAMwDMADADwAwAy65Zo+vgnEXfF/R9v44AmAFgBoCF5+PxzUNojpxcn9d+xtPdtNf/+co5vRxV/t627zflCIAZAGYAmAFgBoAZAGYA2Hr0hLIsK6+vLk4q697b+1lo3Zyuu9N9QXq8qej1277flCMAZgCYAWAGgBkAZgCYAWBz+4DPr+/KunZvZ6uy7h3u79ZeMHc8d/3twVFyxih0Pn393PGUIwBmAJgBJEmC/AMIDmnbMAUfzAAAAABJRU5ErkJggg==" alt=""></div>
-        <div class="ico">✓</div>
-        <div>
-          <div class="tag">AI 说 · Kino 升高</div>
-          <p>"第 1 步：过马路轻触手肘。第 2 步：并排走时肩膀接触。第 3 步：看她反应——如果没躲开，<strong>IOI 信号确认</strong>，可以握手。"</p>
-        </div>
+      <div class="scn-block scn-good">
+        <div class="scn-head"><span class="scn-ico">✓</span><span class="scn-label">AI 说 · 三步推进</span></div>
+        <p>“第 1 步：过马路轻触手肘。第 2 步：并排走时肩膀接触。第 3 步：看她反应——如果没躲开，<strong>IOI 信号确认</strong>，可以握手。”</p>
+        <span class="scn-skill">来自技能 · Kino 升高</span>
       </div>
     </div>
-
-    <div class="ba-row reveal">
-      <div class="ba ba-bad"><div class="px-cell"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABACAYAAADlNHIOAAABFklEQVR4nO3YIU4DQQCG0ZbU7klwhARBCAKNRcIBoBZBgiJBYIEDgKxFo1AYHOdpZdmSMJkw8G/hPbfZdrOTLzOZndEIAAAAAAD468bpF1h1dHw6/3g9e7wft7w/NBvpF/jvBAgTAAAA4JdVn5PsHRzOy79aenl+GvRZTK3W4/clHCZAmABhAoQJECZAmABhxT167b63ZN2+C356/GZAmABhAoRVr8eX13dVa+LVxdlarfklrcdvBoQJECZAmABhAoQJECZA2KT2D13X9a7Ppye9fe7N7UPTs5OhaT1+MyBMgDABwgQIEyBMgDABwj59B7y+vff2sTtbm7197v7u9pcPLN0vPX/o9787/lVmQJgAYQIAQMgCkitLT6ue6TAAAAAASUVORK5CYII=" alt=""><span class="hx">...</span></div>
-        <div class="ico">✕</div>
-        <div>
-          <div class="tag">空气突然安静</div>
-          <p>你紧张得想逃跑。越想找话题越找不到。她开始看手机了。</p>
-        </div>
+  </div>
+</div><div class="stage-panel" data-i="2">
+  <div class="stage">
+    <div class="stage-px">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAACACAYAAABdhGZrAAABrUlEQVR4nO3cMUodQQCAYRXbdxI7ESxCsEid1lIPYGxTBFIJFrYxB9DS1jpVqjTpPE+8wTzCuuw+/+9rl+UNb/gZGGZnbw8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJjb/tIDWLvzi6t/o+dPjz+H/+HS7zN2sPQAYEkCIE0ApAmANAGQJgDSBAAAAAAAAAAAAAAAAMBOmf1OmY+fPg/vtZnq969n9+Ks2Nrn3xdhpAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGmTz9LPfd57Kt8LzGvX598KQJoASBMAaQIgTQCkCYA0AZA2+x7599v7WfeJb759sc+/YmuffysAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQNrh3D+w2WyGz79eXw7Pc9/9eFj1vTOMrX3+rQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaVu/B/jz92V4Hvv0+Gh4nvvsw8n/julN3586fu/v9vxvYwUgTQCkCYA0AZAmANIEQJoAAAAAAAAAeJdeAQY5S5cYpWMCAAAAAElFTkSuQmCC" alt="">
+      <span class="tagline">silence...</span>
+    </div>
+    <div class="stage-right">
+      <div class="scn-block scn-bad">
+        <div class="scn-head"><span class="scn-ico">✕</span><span class="scn-label">没有 AI · 现场</span></div>
+        <p>你紧张得想逃跑。越想找话题越找不到。她开始看手机了。</p>
       </div>
-      <div class="ba ba-good"><div class="px-cell"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABACAYAAADlNHIOAAABMklEQVR4nO3ZoW4CQRRGYZbW7pPgCElF0yDQPEMlplhEExQJAlsMkmdAo1A1dX2cZrFsSTq52SlngfM5smSyw587uXPpdCRJkiTdm4J+AVpVVVXk+0VRZP3NujkXU5wBwAxAkiRJki6s8VzjZ74JzVIeFpO7nz+d8iYMMwCYAUiSBAn35C+jcajvP+x3jfr+tt0zcu/fLghmADADgD3SL5By67MjKwBmADADgCXP12jfm9L0XnBp/71/KwBmADADgIXP4/lyHToTF+9vV3Xmp+TevxUAMwCYAcAMAGYAMAOAGQAs/H9AWZa1z7Ppa63PXX1ss85O2ib3/q0AmAHADABmADADgBkAzABgZ/eAz6/vWh/71O/V+tzh8+DPBVPPU+u3/XnT/f9mBcAMAGYAkiRBjsraTEbIQxsmAAAAAElFTkSuQmCC" alt=""></div>
-        <div class="ico">✓</div>
-        <div>
-          <div class="tag">AI 说 · 多重对话脉络</div>
-          <p>"别慌。'对了，你有没有过那种特别丢人的经历？' 冷场不是结束——是升级的<strong>情绪过山车</strong>。"</p>
-        </div>
+      <div class="scn-block scn-good">
+        <div class="scn-head"><span class="scn-ico">✓</span><span class="scn-label">AI 说 · 话题重启</span></div>
+        <p>“别慌。'对了，你有没有过那种特别丢人的经历？' 冷场不是结束——是升级的<strong>情绪过山车</strong>。”</p>
+        <span class="scn-skill">来自技能 · 多重对话脉络</span>
       </div>
     </div>
-
-    <div class="ba-row reveal">
-      <div class="ba ba-bad"><div class="px-cell"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABACAYAAADlNHIOAAABV0lEQVR4nO3avUoDQRSG4UTS7pXYiZAiioW1lyApbWIXUggiIliInTaWwUuwtkqaNHa5nqSeEXIYduR12ffpwiTMJh/nzA8ZDCRJkiRJktQXQ/oB/tr0Zr47NL78eEV/gyNychkAzgBgnVsDHj7XSU9/vD5LvkPe86MeX/r+2qwAmAHADAA2Kv1A1INry+ejn6c2KwBmADADgIX9MurBudo9OJq/dD5635+zAmAGADMAWOs1IO/B55dXRWvG6vurU/v22qwAmAHADAAW3gV17W4l4jlACQOAGQCsdf8r3fdH+nYusAJgBgAzAFj1fnv//F60JjzdzXrV83NWAMwAYAYAMwCYAcAMAGYAsOL/hkaapkleL26nyT7/5W1Z9e6o66wAmAHADABmADADgBkAzABgv84Bm59tsk8fnxwPS8YvJqcHJ4zG287/38dzVgDMAGAGIEkSZA/ksGXmM3OnYgAAAABJRU5ErkJggg==" alt=""><span class="hx">?!</span></div>
-        <div class="ico">✕</div>
-        <div>
-          <div class="tag">她问"你是不是渣男"</div>
-          <p>你慌了，开始解释、表忠心。越解释越像渣男。</p>
-        </div>
+  </div>
+</div><div class="stage-panel" data-i="3">
+  <div class="stage">
+    <div class="stage-px">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAACACAYAAABdhGZrAAACF0lEQVR4nO3dsWoUURiA0Si2+yR2EkihIYW1jxBS2sROLASRELAQO20sQx4htZU2NnY+j77BTHEZ55rvnHa5yc5uPi78c3dzdAQAAAAAAAAAAAAAAAAAAAAAAMziwd5PgDEXL1//GVl/8/VT+m/g4d5PAPYkANIEQJoASBMAaQIgTQCkpWfA/8L72x+Lc/qr82eL78HanH90jr/1z5+dHYA0AZAmANIEQJoASBMAaQIg7dHWv2B0Dj67tesbXf+/vz6zswOQJgDSBECaAEgTAGkCIE0ApA3PmEfn4Gtmn4OPXv/W11c/77/GDkCaAEgTAGkCIE0ApAmANAGQtvt9gLU5+OnzF5veZ/j+7S49B6+zA5AmANIEQJoASBMAaQIgTQCkDX8v0Ozn9et8HmCZHYA0AZAmANIEQJoASBMAaQIgbfcZ8Nbn/Uf5vMD9ZgcgTQCkCYA0AZAmANIEQJoASJt+xv3uw5dN7xNcv72c/jVgO3YA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBNAKQJgLTh/w+wtcPhsPj4m1cXi+f5P36+mfp7h9iXHYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgbfXzAD9//V48T3/y5PHiefzR9WdPj5ceXjW6fu/rt35s/Ro7AGkCIE0ApAmANAGQJgDSBAAAAAAAAMC99BdnvGZGmXYzAgAAAABJRU5ErkJggg==" alt="">
+      <span class="tagline">shit test</span>
+    </div>
+    <div class="stage-right">
+      <div class="scn-block scn-bad">
+        <div class="scn-head"><span class="scn-ico">✕</span><span class="scn-label">没有 AI · 你的反应</span></div>
+        <p>你慌了，开始解释、表忠心。越解释越像渣男。</p>
       </div>
-      <div class="ba ba-good"><div class="px-cell"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABACAYAAADlNHIOAAABSUlEQVR4nO3bLW4CQQBAYWgxiD0JriFBEFqB5gzImmIrSFAkFVhqkJyhugaCwOA4S1XT6t0mDJOd6SPwPkcGshteZvYPGg1JkiRJkiTdiia9A6l9z1Y/5Pbv589R3+ldrh3ReQwAMwCsRe9Abl+b3cnx9mO/1vvrcgbADAAzAOzqjwEhoTU/N2cAzAAwA8AMADMAzAAwA8CSXwcMhqOo+/Hbz4+szyRi7/WEPp+aMwBmAJgBYDd3Lyh0TMi95lc5A2AGgBkAVvsYEHveH/p87uuCqv9e86ucATADwAwAS77ezt7eo44J8+nL1f0+NYYzAGYAmAFgBoAZAGYAmAFgyZ8HFEVRev06GZfO8xfLNfofrkvjDIAZAGYAmAFgBoAZAGYA2J/rgP3hWDpP7z10mjHjT/3uyQ2Gxutu/9LHq5wBMAPADCBJEuQXpppLwAlHCg8AAAAASUVORK5CYII=" alt=""></div>
-        <div class="ico">✓</div>
-        <div>
-          <div class="tag">AI 说 · 框架控制</div>
-          <p>"这是<strong>服从性测试</strong>。别解释。反转：'你是不是想让我说 yes 然后截图发闺蜜？' 把测试变成<strong>调情</strong>。"</p>
-        </div>
+      <div class="scn-block scn-good">
+        <div class="scn-head"><span class="scn-ico">✓</span><span class="scn-label">AI 说 · 反转框架</span></div>
+        <p>“这是<strong>服从性测试</strong>。别解释。反转：'你是不是想让我说 yes 然后截图发闺蜜？' 把测试变成<strong>调情</strong>。”</p>
+        <span class="scn-skill">来自技能 · 框架控制</span>
       </div>
     </div>
-
-    <div class="ba-row reveal">
-      <div class="ba ba-bad"><div class="px-cell"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABACAYAAADlNHIOAAAA+klEQVR4nO3YPUoDQQCG4Shp9yR2EkghYmGdM3gBbVMEUgVS2CYX8AzWVlZp7HKepN4IGYZd+Xblebqw2Z/hZYbZnUwAAAAAAAAAAAAA+C9uak94fF6cav7//fVZfY8h63v8t90eh64ECBMgTIAwAcIECBMgrLhHr933loztveCvx28GhAkQJkBY9Xq83u6r1sTN6nVUa35J3+M3A8IECBMgTIAwAcIECBMgbFp7QtM0rd/Lt5fWPvd999Hrt5Oh6Xv8ZkCYAGEChAkQJkCYAGEChP16Dzj8HFv72Pn9XWuf+/Qwu3rB0vHS9Yd+vOv4L5kBYQKECQAAIWfw4z9I7qepngAAAABJRU5ErkJggg==" alt=""><span class="hx">?</span></div>
-        <div class="ico">✕</div>
-        <div>
-          <div class="tag">想牵手 / 接吻</div>
-          <p>不知道时机对不对。怕被拒绝后连朋友都做不成。于是什么都没做。</p>
-        </div>
+  </div>
+</div><div class="stage-panel" data-i="4">
+  <div class="stage">
+    <div class="stage-px">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAACACAYAAABdhGZrAAABgklEQVR4nO3cMUoDQQBA0Si2OYmdCBYiFtaewQvE1kKwEixs9QKewdrKysbO8+gNNmgysPG/14bNzjJ8BobZXSwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKBjb/QNzi4uv0f+//vb6/Bn4O/mPv/72xoI7CIBkCYA0gRAmgBIEwBpAiBNAKQJgDQBkCYA0gRAmgBIEwBpAiBt47P0o897b8r7AmPt+vxbAUgTAGkCIE0ApAmANAGQJgDShu+R3z08D90nvr9d2eefsbnPvxWANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIO1g9A2Wy+Xk7zfXV5PnuR+fXmb93RmmzX3+rQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaWvfB/j4/Jo8j31ydDh5nvv89Pi3Y9rq9ZuO3/W7Pf/rWAFIEwBpAiBNAKQJgDQBkCYAAAAAAAAA/qUf0MY/iLDpRTcAAAAASUVORK5CYII=" alt="">
+      <span class="tagline">window?</span>
+    </div>
+    <div class="stage-right">
+      <div class="scn-block scn-bad">
+        <div class="scn-head"><span class="scn-ico">✕</span><span class="scn-label">没有 AI · 你的反应</span></div>
+        <p>不知道时机对不对。怕被拒绝后连朋友都做不成。于是什么都没做。</p>
       </div>
-      <div class="ba ba-good"><div class="px-cell hug"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABACAYAAADlNHIOAAABDklEQVR4nO3ZMUoDQQCG0UQs3cJz2IlgIZLC2iuYC2hrIVgFUtjqBfQKFqksxMrGLrcRtJ4NbBgY9w/yXpdM2MzyMbuz7GQCAAAAAAAAAAAAwH8xTU+g7/zi8qfm9x9vr4Pn0Pp4re2N+WdsEiBMgLD99ARqrb4Pyy9mV8U1/uD9Zefua0OsgDABwgQIi18va/fpY/vr5wIrIEyAMAHC4veAvvvlU9U9YXF3PXgOrY/XmhUQJkCYAGEChAkQJkCYAGE79z6g67ri8+3NvNiXPzw+V+3rWx+vNSsgTIAwAcIECBMgTIAwAcI2ngM+v9bFvvj0+Gg65vjs7GRwwtvG0/PfNt5nBYQJECYAAIT8AhmuRr7tqo8WAAAAAElFTkSuQmCC" alt=""><span class="hx">♥</span></div>
-        <div class="ico">✓</div>
-        <div>
-          <div class="tag">AI 说 · 进挪升高</div>
-          <p>"她刚才的 <strong>IOI 信号</strong>：身体前倾 + 眼神停留超过 3 秒 + 主动碰你手臂。窗口已打开——靠近，停顿 2 秒，看她眼睛。如果没后退，<strong>吻她</strong>。"</p>
-        </div>
+      <div class="scn-block scn-good">
+        <div class="scn-head"><span class="scn-ico">✓</span><span class="scn-label">AI 说 · 信号确认</span></div>
+        <p>“她刚才的 <strong>IOI 信号</strong>：身体前倾 + 眼神停留超过 3 秒 + 主动碰你手臂。窗口已打开——靠近，停顿 2 秒，看她眼睛。如果没后退，<strong>吻她</strong>。”</p>
+        <span class="scn-skill">来自技能 · 进挪升高</span>
       </div>
     </div>
-
-    <div class="ba-row reveal">
-      <div class="ba ba-bad"><div class="px-cell"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABACAYAAADlNHIOAAABl0lEQVR4nO3bIU/DQBiH8Y4gmeYLkCAAAQaFIGgEAhJGCAq3GZIhlqCWILDbFyAEDAKBJggUBgQgSPgCePwQmN0hlku7PUv7/Nyla3PZP++97XbNMklSVdXoCZTd3OPBYHj8s3kdfOczk52OYgYAMwBY6XrA4fHJYPSnxueu8R2M4zU/ZgXADABmALBZegLj1tjfG+v1d2u9YLxzMx+Mr0acbwXADABmALDS94DVlcVCr7fw3gzGX8v9YNzOuknXswJgBgAzAFjpe0Ds9e0z1/m3WaugmfyxAmAGADMAWOV6QNHPBXlZATADgBkArHI9IJb6XFB0D7ECYAYAMwBY7h6wsbWdtA/n6eF+qvYi0c8FVgDMAGAGAEvuAalr/qjzp60nTJoVADMAmAHAkntAvGafnfeTekK306z0mh+zAmAGADMAmAHADABmADADgOX+P6Berwfj09ZRcJ9/0btE39uddlYAzABgBgAr/b6gdiftna1JswJgBgAzANi/3+afXz6C+/b1taWax4s7HrMCYAYAMwBJkiC/6FBb2BpzbGQAAAAASUVORK5CYII=" alt=""><span class="hx">...</span></div>
-        <div class="ico">✕</div>
-        <div>
-          <div class="tag">被已读不回</div>
-          <p>焦虑、反复看手机。连发 3 条追问。她彻底消失了。</p>
-        </div>
+  </div>
+</div><div class="stage-panel" data-i="5">
+  <div class="stage">
+    <div class="stage-px">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAACACAYAAABdhGZrAAACZElEQVR4nO3doYpUYRiA4RkxutkbEAxq0GIyiNlgUHBFTLbdIqxhwTRgsO7egIgWg8EsBpNFgxoEb8BuXy9APBNmD2dm3uepP+ecP+zLD+ebmZ3NAAAAAACAbTWfegOwinMfH5wMrf+5+Xrwb/zM6W4HNosASBMAaQIgTQCkCYA0AZBmDrDmHj5+Mviee9u92/09uL7sPf8yTgDSBECaAEgTAGkCIE0ApAmAtLNTb4DV7N6/N/UWVnJ3fjS4fufN+cH1Vys+3wlAmgBIEwBpAiBNAKQJgDQBkGYOsOGuXrk49RYGXfi+N7j+6/Lx4PrBbHGa2/mHE4A0AZAmANIEQJoASBMAaQIgzRxgy3399nPS57+d7U/6/GWcAKQJgDQBkCYA0gRAmgBIEwBp5gBbbt2/LzA1JwBpAiBNAKQJgDQBkCYA0gRAmjlA3NjfF1j3OYQTgDQBkCYA0gRAmgBIEwBpAiBt8jnAjVu3T8a8/6cP7+dj3n/Trft7+rE5AUgTAGkCIE0ApAmANAGQJgDSRp8DjP2ef9XnmxO0OQFIEwBpAiBNAKQJgDQBkCYA0kafAyx7z/7s+fGoc4LF4Z73/PyXE4A0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgbfL/D7CzszO4/nT/0eDn+V8cvZz0d4fYbE4A0gRAmgBIEwBpAiBNAKQJgLTJ5wCs5uBwMfUWNpoTgDQBkCYA0gRAmgBIEwBpAiBt6W/nf/7yY/Dz9tevXRq8h+tdP+X1yzgBSBMAaQIgTQCkCYA0AZAmAAAAAAAAALbSX5XfXEjm9Z9lAAAAAElFTkSuQmCC" alt="">
+      <span class="tagline">read 12:47</span>
+    </div>
+    <div class="stage-right">
+      <div class="scn-block scn-bad">
+        <div class="scn-head"><span class="scn-ico">✕</span><span class="scn-label">没有 AI · 你的反应</span></div>
+        <p>焦虑、反复看手机。连发 3 条追问。她彻底消失了。</p>
       </div>
-      <div class="ba ba-good"><div class="px-cell"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABACAYAAADlNHIOAAABcElEQVR4nO3bIUsDcRiA8ZsYd5/DIAYtJjGYbVY12RRB0DBYGixMEESbSa02s0FMFg1i8Husz7o7D8fL3e25bc+vjW34nw/v/W93LEkkSZIkLZoWvYCo4fbBaPxx+/Uh8xn2j85GSYM83l39+z9emtZCVMwAMAPAlukFROWP+ZNc9rt1LaXQeacXer0TADMAzACwmdsDqtbeOw29fvh0XenfdwJgBoAZALbwe0DVx/QoJwBmAJgBYAaAGQBmAJgBYKW/B2zt7Ibuwb69PM/cfeg6OQEwA8AMAJv7a0GfXz+l3r++tlLRSoo5ATADwAwAC+8B0fP+Se+v+3tB3cfwspwAmAFgBoCF94D8Mbvbvw3tCb3OsdeCxjgBMAPADAAzAMwAMAPADAArfT8gTdPM44uTw8x5/uDmvlG/220aJwBmAJgBYHN/Tzj6u91pcwJgBoAZAPbn2vz7x3fmvH1zY7Xl89U9n+cEwAwAM4AkSZBflRJXOA7ncrgAAAAASUVORK5CYII=" alt=""></div>
-        <div class="ico">✓</div>
-        <div>
-          <div class="tag">AI 说 · 间歇性奖赏</div>
-          <p>"别追。启动<strong>间歇性奖赏</strong> + <strong>冷冻机制</strong>：3 天不联系，第 4 天发一条跟她无关的有趣动态。让她主动来问你。"</p>
-        </div>
+      <div class="scn-block scn-good">
+        <div class="scn-head"><span class="scn-ico">✓</span><span class="scn-label">AI 说 · 节奏反转</span></div>
+        <p>“别追。启动<strong>间歇性奖赏</strong> + <strong>冷冻机制</strong>：3 天不联系，第 4 天发一条跟她无关的有趣动态。让她主动来问你。”</p>
+        <span class="scn-skill">来自技能 · 间歇性奖赏</span>
       </div>
     </div>
+  </div>
+</div></div>
 
-    <div class="ba-sum reveal">
+    <div class="stage-foot">
+      <div class="stage-dots" id="scnDots"><span class="dot active" data-i="0"></span><span class="dot" data-i="1"></span><span class="dot" data-i="2"></span><span class="dot" data-i="3"></span><span class="dot" data-i="4"></span><span class="dot" data-i="5"></span></div>
+      <span class="stage-progress" id="scnProg">1 / 6 · 自动轮播中</span>
+    </div>
+
+    <div class="ba-sum reveal" style="margin-top:44px">
       从"不知道说什么"到"每一步都有方案" · 从"怕被拒绝"到"精准把握时机"
     </div>
   </div>
@@ -527,6 +578,30 @@ document.querySelectorAll('.tab').forEach(b => {
     document.querySelectorAll('.tab-content').forEach(c => c.classList.toggle('show', c.dataset.content === t));
   });
 });
+
+/* 场景大舞台: tab/自动轮播/dots */
+(function(){
+  const tabs=[...document.querySelectorAll('.scn-tab')],
+        panels=[...document.querySelectorAll('.stage-panel')],
+        dots=[...document.querySelectorAll('#scnDots .dot')],
+        prog=document.getElementById('scnProg');
+  if(!tabs.length) return;
+  let cur=0, timer;
+  function show(i){
+    cur=i;
+    tabs.forEach((t,k)=>t.classList.toggle('active',k===i));
+    panels.forEach(p=>p.classList.toggle('show',+p.dataset.i===i));
+    dots.forEach(d=>d.classList.toggle('active',+d.dataset.i===i));
+    prog.textContent=(i+1)+' / 6 · 自动轮播中';
+  }
+  function reset(){clearInterval(timer);timer=setInterval(()=>show((cur+1)%6),5000)}
+  tabs.forEach(t=>t.addEventListener('click',()=>{show(+t.dataset.i);reset()}));
+  dots.forEach(d=>d.addEventListener('click',()=>{show(+d.dataset.i);reset()}));
+  const sec=document.getElementById('compare');
+  sec.addEventListener('mouseenter',()=>{clearInterval(timer);prog.textContent=(cur+1)+' / 6 · 已暂停 (移开恢复)'});
+  sec.addEventListener('mouseleave',()=>{reset();prog.textContent=(cur+1)+' / 6 · 自动轮播中'});
+  reset();
+})();
 
 /* 书墙 (18 本真实书名与技能数 x2 无缝循环) */
 const books = [
